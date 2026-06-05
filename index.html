@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FGBNMS CPCe Interactive Report Figures · CSV Driven</title>
+<script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Libre+Franklin:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --abyss:#06202c;
+  --deep:#0a3040;
+  --shelf:#0f4458;
+  --paper:#f3f7f6;
+  --card:#ffffff;
+  --ink:#0d2733;
+  --muted:#5c7280;
+  --faint:#8aa0ab;
+  --line:#d3e2e6;
+  --line-soft:#e6eff0;
+  --coral:#e8743b;
+  --reef:#2d9cb8;
+  --sea-amber:#e3a13b;
+  --focus:#1c7d99;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  font-family:"Libre Franklin", system-ui, sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position:relative;
+  overflow:hidden;
+  color:#eaf4f5;
+  background:
+    radial-gradient(120% 90% at 12% -10%, rgba(45,156,184,.40), transparent 55%),
+    radial-gradient(90% 80% at 92% 0%, rgba(227,161,59,.22), transparent 50%),
+    linear-gradient(168deg, var(--abyss) 0%, var(--deep) 58%, var(--shelf) 100%);
+}
+.hero::after {
+  /* faint bathymetric contour lines */
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    repeating-radial-gradient(circle at 18% 120%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px);
+  opacity:.7;
+  pointer-events:none;
+}
+.hero-inner {
+  position:relative;
+  z-index:1;
+  max-width:1180px;
+  margin:0 auto;
+  padding:58px 22px 42px;
+}
+.kicker {
+  font-family:"IBM Plex Mono", monospace;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  font-size:11.5px;
+  font-weight:500;
+  color:#7fd0dd;
+}
+h1 {
+  font-family:"Archivo", system-ui, sans-serif;
+  font-weight:760;
+  margin:14px 0 16px;
+  font-size:clamp(34px, 5.4vw, 62px);
+  line-height:1.0;
+  letter-spacing:-.02em;
+  max-width:14ch;
+}
+.hero p {
+  max-width:62ch;
+  font-size:16.5px;
+  line-height:1.6;
+  color:rgba(232,244,246,.82);
+  margin:0;
+}
+.hero p code { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.16); color:#dff1f3; }
+
+/* ---------- SHELL ---------- */
+.shell {
+  max-width:1180px;
+  margin:0 auto 70px;
+  padding:0 22px;
+}
+
+/* ---------- METRICS ---------- */
+.cards {
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:13px;
+  margin:-34px 0 26px;
+  position:relative;
+  z-index:2;
+}
+.metric {
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px 18px;
+  box-shadow:0 14px 38px rgba(6,32,44,.14);
+}
+.metric .label {
+  font-family:"IBM Plex Mono", monospace;
+  color:var(--muted);
+  font-size:10.5px;
+  text-transform:uppercase;
+  font-weight:500;
+  letter-spacing:.12em;
+}
+.metric .value {
+  font-family:"Archivo", system-ui, sans-serif;
+  font-size:30px;
+  font-weight:560;
+  margin-top:6px;
+  letter-spacing:-.02em;
+  color:var(--ink);
+}
+.metric .value small { font-size:14px; color:var(--faint); font-family:"Libre Franklin", sans-serif; }
+
+/* ---------- SECTIONS ---------- */
+.section {
+  margin-top:22px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px 22px 12px;
+  box-shadow:0 18px 46px rgba(6,32,44,.08);
+}
+.section-head { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; }
+.section-index {
+  font-family:"Archivo", system-ui, sans-serif;
+  font-size:13px;
+  font-weight:760;
+  color:var(--coral);
+  letter-spacing:.04em;
+}
+.section h2 {
+  font-family:"Archivo", system-ui, sans-serif;
+  margin:2px 0 0;
+  font-size:25px;
+  font-weight:560;
+  letter-spacing:-.01em;
+}
+.section p.lede {
+  margin:8px 0 0;
+  color:var(--muted);
+  line-height:1.55;
+  max-width:78ch;
+  font-size:14px;
+}
+
+/* ---------- CONTROLS ---------- */
+.chart-controls {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:end;
+  gap:14px;
+  margin:18px 0 4px;
+  padding:14px 16px;
+  background:linear-gradient(180deg,#f7fbfb,#eef6f6);
+  border:1px solid var(--line-soft);
+  border-radius:14px;
+}
+.chart-control { display:flex; flex-direction:column; gap:5px; }
+.chart-control label.cl {
+  font-family:"IBM Plex Mono", monospace;
+  color:var(--muted);
+  font-size:10px;
+  text-transform:uppercase;
+  font-weight:500;
+  letter-spacing:.12em;
+}
+.chart-control select, .chart-control button, .chart-control input[type="file"] {
+  font-family:"Libre Franklin", sans-serif;
+  font-size:13px;
+  color:var(--ink);
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:8px 11px;
+  min-width:118px;
+}
+.chart-control select:focus, .chart-control button:focus { outline:2px solid var(--focus); outline-offset:1px; }
+.chart-control button { cursor:pointer; font-weight:600; min-width:auto; transition:background .15s, border-color .15s; }
+.chart-control button:hover { background:#eef6f6; border-color:var(--reef); }
+.chart-control button.ghost { background:transparent; color:var(--focus); border-color:var(--reef); }
+.chart-control button.ghost:hover { background:#e7f3f5; }
+.chart-control-group { display:flex; flex-wrap:wrap; gap:8px; align-items:center; max-width:100%; }
+.chart-control-wide { min-width:100%; }
+
+/* segmented control for mode toggles */
+.segmented { display:inline-flex; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+.segmented button {
+  border:0; background:transparent; min-width:auto; border-radius:0;
+  padding:8px 14px; font-size:12.5px; font-weight:600; cursor:pointer; color:var(--muted);
+  font-family:"Libre Franklin", sans-serif; transition:background .15s,color .15s;
+}
+.segmented button + button { border-left:1px solid var(--line); }
+.segmented button.active { background:var(--reef); color:#fff; }
+
+.toggle-pill {
+  display:inline-flex; align-items:center; gap:7px;
+  background:#fff; border:1px solid var(--line); border-radius:999px;
+  padding:6px 12px 6px 10px; font-size:12.5px; color:var(--ink);
+  cursor:pointer; user-select:none; transition:border-color .15s, background .15s;
+}
+.toggle-pill:hover { border-color:var(--reef); }
+.toggle-pill input { margin:0; accent-color:var(--reef); }
+.toggle-pill.swatched::before {
+  content:""; width:11px; height:11px; border-radius:3px; background:var(--sw,#999); display:inline-block;
+}
+
+/* ---------- FIGURE + NOTES ---------- */
+.figure { margin-top:10px; }
+.note {
+  font-family:"IBM Plex Mono", monospace;
+  color:var(--faint); font-size:11.5px; line-height:1.55; padding:4px 4px 16px;
+}
+.empty-flag {
+  display:none; margin:10px 4px; padding:11px 14px;
+  background:#fff6ec; border:1px solid #f3d5ad; border-radius:11px;
+  color:#8a5418; font-size:13px; line-height:1.5;
+}
+.status {
+  display:none; margin:14px 2px 0; padding:12px 14px;
+  background:#fff6ec; border:1px solid #f3d5ad; border-radius:11px;
+  color:#8a5418; font-size:13px; line-height:1.5;
+}
+.file-loader { display:none; }
+.footer {
+  color:var(--muted); font-size:12.5px; line-height:1.6; padding:30px 6px 4px;
+  border-top:1px solid var(--line); margin-top:34px;
+}
+.footer strong { color:var(--ink); }
+code {
+  font-family:"IBM Plex Mono", monospace;
+  background:#eaf3f3; border:1px solid var(--line-soft);
+  padding:2px 6px; border-radius:6px; font-size:.92em;
+}
+.provenance-list { list-style:none; margin:10px 0 0; padding:0; columns:2; column-gap:30px; }
+.provenance-list li { margin:3px 0; break-inside:avoid; font-family:"IBM Plex Mono", monospace; font-size:11.5px; }
+
+@media (max-width:900px) {
+  .cards { grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .section-head { flex-direction:column; }
+  .provenance-list { columns:1; }
+}
+@media (max-width:560px) { .cards { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Flower Garden Banks · CPCe Monitoring Pipeline</div>
+    <h1>Long-Term Reef Cover at the Flower Garden Banks</h1>
+    <p>A CSV-driven viewer for the CPCe benthic monitoring record. Every chart renders directly from the pipeline-product summary files in this folder — reading pre-computed fields like <code>mean_percent_cover</code> and <code>se_percent_cover</code> rather than re-deriving anything from raw point counts.</p>
+  </div>
+</header>
+
+<main class="shell">
+  <div class="cards">
+    <div class="metric"><div class="label">Record span</div><div class="value" id="metric-years">—</div></div>
+    <div class="metric"><div class="label">Banks monitored</div><div class="value" id="metric-banks">—</div></div>
+    <div class="metric"><div class="label">Coral taxa tracked</div><div class="value" id="metric-species">—</div></div>
+    <div class="metric"><div class="label">Time-series gaps</div><div class="value" id="metric-gaps">—</div></div>
+  </div>
+
+  <div class="status" id="load-status"></div>
+  <div class="file-loader" id="manual-loader">
+    <div class="chart-controls">
+      <div class="chart-control chart-control-wide"><label class="cl">Manual CSV fallback — select all six product files</label><input id="manual-files" type="file" accept=".csv" multiple /></div>
+    </div>
+    <div class="note">If your browser blocks local CSV loading from a double-clicked HTML file, run a local web server from this folder (<code>py -m http.server 8000</code>) or pick the six CSV files above.</div>
+  </div>
+
+  <!-- ===================== CHART 1 ===================== -->
+  <section class="section" id="sec1">
+    <div class="section-head">
+      <div>
+        <div class="section-index">FIGURE 01</div>
+        <h2>Long-term benthic cover</h2>
+        <p class="lede">Mean percent cover through time at the study sites. East and West Flower Garden Bank are stacked as separate panels. Switch between line trends and a stacked-composition view; turn standard-error bands and provenance shading on or off.</p>
+      </div>
+    </div>
+    <div class="chart-controls">
+      <div class="chart-control"><label class="cl">View</label>
+        <div class="segmented" id="chart1-view">
+          <button type="button" data-view="lines" class="active">Lines</button>
+          <button type="button" data-view="area">Stacked area</button>
+        </div>
+      </div>
+      <div class="chart-control"><label class="cl" for="chart1-start-year">Start year</label><select id="chart1-start-year"></select></div>
+      <div class="chart-control"><label class="cl" for="chart1-end-year">End year</label><select id="chart1-end-year"></select></div>
+      <div class="chart-control"><label class="cl">&nbsp;</label><button id="chart1-reset-years" type="button">Reset years</button></div>
+      <div class="chart-control"><label class="cl">&nbsp;</label>
+        <div class="chart-control-group">
+          <label class="toggle-pill"><input type="checkbox" id="chart1-se" checked> SE bands</label>
+          <label class="toggle-pill"><input type="checkbox" id="chart1-prov"> Annotate gaps &amp; sources</label>
+        </div>
+      </div>
+      <div class="chart-control"><label class="cl">&nbsp;</label><button class="ghost" id="chart1-export" type="button">Download view CSV</button></div>
+      <div class="chart-control chart-control-wide"><label class="cl">Bank panels</label><div class="chart-control-group" id="chart1-bank-controls"></div></div>
+      <div class="chart-control chart-control-wide"><label class="cl">Benthic groups</label><div class="chart-control-group" id="chart1-group-controls"></div></div>
+    </div>
+    <div class="empty-flag" id="chart1-empty"></div>
+    <div class="figure"><div id="chart1-benthic-subplots" style="height:840px; width:100%;"></div></div>
+    <div class="note">Source: <code>figure3_benthic_time_series_summary.csv</code> + <code>figure3_appendix_benthic_time_series_summary_2004_2008.csv</code>. Overlapping 2004–2008 rows from the two branches are the same measurement and are collapsed to one point per year. Series break at gap years rather than interpolating.</div>
+  </section>
+
+  <!-- ===================== CHART 2 ===================== -->
+  <section class="section" id="sec2">
+    <div class="section-head">
+      <div>
+        <div class="section-index">FIGURE 02</div>
+        <h2>Benthic cover composition</h2>
+        <p class="lede">Mean percent cover by benthic group for a chosen year. Compare banks and survey scopes side by side, or stack groups to read the full benthic budget. Error bars use the SE field from the CSV.</p>
+      </div>
+    </div>
+    <div class="chart-controls">
+      <div class="chart-control"><label class="cl">Bars</label>
+        <div class="segmented" id="chart2-mode">
+          <button type="button" data-mode="group" class="active">Grouped</button>
+          <button type="button" data-mode="stack">Stacked</button>
+        </div>
+      </div>
+      <div class="chart-control"><label class="cl" for="chart2-year">Year</label><select id="chart2-year"></select></div>
+      <div class="chart-control"><label class="cl">&nbsp;</label><button class="ghost" id="chart2-export" type="button">Download view CSV</button></div>
+      <div class="chart-control chart-control-wide"><label class="cl">Survey scope</label><div class="chart-control-group" id="chart2-scope-controls"></div></div>
+    </div>
+    <div class="empty-flag" id="chart2-empty"></div>
+    <div class="figure"><div id="chart2-composition" style="height:560px; width:100%;"></div></div>
+    <div class="note">Source: <code>figure1_random_transects_summary.csv</code> + <code>figure1_appendix_random_transects_summary_2004_2008.csv</code>. Reef-wide scope is only present for recent years.</div>
+  </section>
+
+  <!-- ===================== CHART 3 ===================== -->
+  <section class="section" id="sec3">
+    <div class="section-head">
+      <div>
+        <div class="section-index">FIGURE 03</div>
+        <h2>Coral species explorer</h2>
+        <p class="lede">Per-species mean cover for a chosen year, ranked by cover. Horizontal bars keep the long taxonomic labels readable; switch to vertical if you prefer. Limit to the top species or show every taxon.</p>
+      </div>
+    </div>
+    <div class="chart-controls">
+      <div class="chart-control"><label class="cl">Orientation</label>
+        <div class="segmented" id="chart3-orient">
+          <button type="button" data-orient="h" class="active">Horizontal</button>
+          <button type="button" data-orient="v">Vertical</button>
+        </div>
+      </div>
+      <div class="chart-control"><label class="cl" for="chart3-year">Year</label><select id="chart3-year"></select></div>
+      <div class="chart-control"><label class="cl" for="chart3-topn">Species shown</label><select id="chart3-topn"><option>10</option><option selected>20</option><option>30</option><option>All</option></select></div>
+      <div class="chart-control"><label class="cl">&nbsp;</label><button class="ghost" id="chart3-export" type="button">Download view CSV</button></div>
+      <div class="chart-control chart-control-wide"><label class="cl">Survey scope</label><div class="chart-control-group" id="chart3-scope-controls"></div></div>
+    </div>
+    <div class="empty-flag" id="chart3-empty"></div>
+    <div class="figure"><div id="chart3-species" style="height:640px; width:100%;"></div></div>
+    <div class="note">Source: <code>figure2_coral_species_summary.csv</code> + <code>figure2_appendix_coral_species_summary_2004_2008.csv</code>. Ranking uses the summarized CSV cover values only.</div>
+  </section>
+
+  <!-- ===================== CHART 4 ===================== -->
+  <section class="section" id="sec4">
+    <div class="section-head">
+      <div>
+        <div class="section-index">FIGURE 04</div>
+        <h2>Coral &amp; macroalgae &mdash; phase-shift view</h2>
+        <p class="lede">The two CSV cover series plotted directly against each other through time, per bank, with the space between them shaded. Both lines are the <code>mean_percent_cover</code> values straight from the file, grey visualizing changing gap between the lines.</p>
+      </div>
+    </div>
+    <div class="chart-controls">
+      <div class="chart-control"><label class="cl" for="chart4-start-year">Start year</label><select id="chart4-start-year"></select></div>
+      <div class="chart-control"><label class="cl" for="chart4-end-year">End year</label><select id="chart4-end-year"></select></div>
+      <div class="chart-control"><label class="cl">&nbsp;</label><button id="chart4-reset-years" type="button">Reset years</button></div>
+      <div class="chart-control"><label class="cl">&nbsp;</label>
+        <div class="chart-control-group">
+          <label class="toggle-pill"><input type="checkbox" id="chart4-se" checked> SE bands</label>
+          <label class="toggle-pill"><input type="checkbox" id="chart4-fill" checked> Shade gap</label>
+        </div>
+      </div>
+      <div class="chart-control"><label class="cl">&nbsp;</label><button class="ghost" id="chart4-export" type="button">Download view CSV</button></div>
+      <div class="chart-control chart-control-wide"><label class="cl">Bank panels</label><div class="chart-control-group" id="chart4-bank-controls"></div></div>
+    </div>
+    <div class="empty-flag" id="chart4-empty"></div>
+    <div class="figure"><div id="chart4-phaseshift" style="height:780px; width:100%;"></div></div>
+    <div class="note">Source: <code>figure3_benthic_time_series_summary.csv</code> + appendix. Only the Coral and Macroalgae <code>mean_percent_cover</code> series are drawn; the shaded band is a visual fill between them, not a derived value.</div>
+  </section>
+
+  <div class="footer">
+    <strong>Provenance.</strong> Place this page in the same folder as the six authoritative pipeline product CSVs. It reads summary fields (<code>mean_percent_cover</code>, <code>se_percent_cover</code>, <code>year</code>, <code>bank</code>, <code>survey_scope</code>, and either <code>plot_group</code> or <code>species_label</code>) and a <code>data_source_branch</code> tag. It does not derive percent cover from raw CPCe point data.
+    <ul class="provenance-list">
+      <li>figure1_random_transects_summary.csv</li>
+      <li>figure1_appendix_random_transects_summary_2004_2008.csv</li>
+      <li>figure2_coral_species_summary.csv</li>
+      <li>figure2_appendix_coral_species_summary_2004_2008.csv</li>
+      <li>figure3_benthic_time_series_summary.csv</li>
+      <li>figure3_appendix_benthic_time_series_summary_2004_2008.csv</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+const DATA_FILES = {
+  fig1Main:'figure1_random_transects_summary.csv',
+  fig1Appendix:'figure1_appendix_random_transects_summary_2004_2008.csv',
+  fig2Main:'figure2_coral_species_summary.csv',
+  fig2Appendix:'figure2_appendix_coral_species_summary_2004_2008.csv',
+  fig3Main:'figure3_benthic_time_series_summary.csv',
+  fig3Appendix:'figure3_appendix_benthic_time_series_summary_2004_2008.csv'
+};
+
+/* Semantic palette: warm = animal/biogenic, green = algae, neutrals = substrate */
+/* Benthic group palette matching the original input project (Coral = blue, etc.) */
+const COLORS = {
+  'Coral':'#2F7EBE', 'Macroalgae':'#36A27D', 'Sponge':'#D98B1F',
+  'Colonizable Substrate':'#E5B700', 'CCA':'#B86AD9', 'Sand':'#B9A37C',
+  'Other':'#8B78D6', 'Hydrocoral':'#E45756'
+};
+const GROUP_ORDER = ['Coral','Macroalgae','Sponge','Colonizable Substrate','CCA','Sand','Other','Hydrocoral'];
+const BANKS = ['EFGB','WFGB'];
+const APPENDIX_RANGE = [2004, 2008];
+const PLOT_CONFIG = {responsive:true, displaylogo:false, modeBarButtonsToRemove:['lasso2d','select2d'], toImageButtonOptions:{scale:2}};
+
+const STATE = { chart1View:'lines', chart2Mode:'group', chart3Orient:'h' };
+let DATA = {fig1:[], fig2:[], fig3:[]};
+
+const PHASE_GROUPS = ['Coral', 'Macroalgae'];   // chart 4 plots only these two CSV series
+
+/* ---------------- CSV parsing & loading (unchanged contract) ---------------- */
+function parseCSV(text) {
+  const rows = [];
+  let row = [], field = '', inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i], n = text[i+1];
+    if (c === '"') {
+      if (inQuotes && n === '"') { field += '"'; i++; }
+      else { inQuotes = !inQuotes; }
+    } else if (c === ',' && !inQuotes) { row.push(field); field = ''; }
+    else if ((c === '\n' || c === '\r') && !inQuotes) {
+      if (c === '\r' && n === '\n') i++;
+      row.push(field); field = '';
+      if (row.some(v => v.trim() !== '')) rows.push(row);
+      row = [];
+    } else { field += c; }
+  }
+  if (field.length || row.length) { row.push(field); if (row.some(v => v.trim() !== '')) rows.push(row); }
+  const header = rows.shift().map(h => h.trim());
+  return rows.map(r => {
+    const obj = {};
+    header.forEach((h, i) => obj[h] = (r[i] ?? '').trim());
+    ['year','n_transects','mean_percent_cover','sd_percent_cover','se_percent_cover'].forEach(k => {
+      if (obj[k] !== undefined && obj[k] !== '') obj[k] = Number(obj[k]);
+    });
+    return obj;
+  });
+}
+async function fetchCSV(filename) {
+  const response = await fetch(filename, {cache:'no-store'});
+  if (!response.ok) throw new Error(`Could not load ${filename}`);
+  return parseCSV(await response.text());
+}
+function dedupeRows(rows) {
+  // Collapse rows describing the same measurement. The 2004–2008 appendix carries the
+  // same values as the main branch, differing only by floating-point precision and the
+  // data_source_branch label, so the byte-level key kept both. Key on every field EXCEPT
+  // data_source_branch, with numerics rounded, and keep the first (full-precision) row.
+  const seen = new Set(), out = [];
+  rows.forEach(r => {
+    const key = Object.keys(r).filter(k => k !== 'data_source_branch').sort()
+      .map(k => typeof r[k] === 'number' ? `${k}=${r[k].toFixed(9)}` : `${k}=${r[k]}`).join('|');
+    if (!seen.has(key)) { seen.add(key); out.push(r); }
+  });
+  return out;
+}
+async function loadAllFromFetch() {
+  const [f1m,f1a,f2m,f2a,f3m,f3a] = await Promise.all([
+    fetchCSV(DATA_FILES.fig1Main), fetchCSV(DATA_FILES.fig1Appendix),
+    fetchCSV(DATA_FILES.fig2Main), fetchCSV(DATA_FILES.fig2Appendix),
+    fetchCSV(DATA_FILES.fig3Main), fetchCSV(DATA_FILES.fig3Appendix)
+  ]);
+  DATA.fig1 = dedupeRows([...f1m, ...f1a]);
+  DATA.fig2 = dedupeRows([...f2m, ...f2a]);
+  DATA.fig3 = dedupeRows([...f3m, ...f3a]);
+}
+
+/* ---------------- helpers ---------------- */
+function uniq(arr) { return [...new Set(arr)].filter(v => v !== undefined && v !== '').sort((a,b) => a > b ? 1 : -1); }
+function years(rows) { return uniq(rows.map(r => r.year)).sort((a,b)=>a-b); }
+function setStatus(msg, show=true) { const el=document.getElementById('load-status'); el.innerHTML=msg; el.style.display=show?'block':'none'; }
+function hexToRgba(hex, a) { const h=hex.replace('#',''); return `rgba(${parseInt(h.slice(0,2),16)},${parseInt(h.slice(2,4),16)},${parseInt(h.slice(4,6),16)},${a})`; }
+function scopeLabel(s){ return String(s||'').replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase()); }
+function selectedScopeText(s){ return s.length ? s.map(scopeLabel).join(' + ') : 'No scope selected'; }
+function bankScopeStyle(bank, scope) {
+  const reefwide = String(scope).toLowerCase().includes('reef');
+  const base = bank === 'EFGB' ? '#2d9cb8' : '#e3a13b';
+  const alt  = bank === 'EFGB' ? '#84cad8' : '#f1c987';
+  return { color: reefwide ? alt : base, lineColor: bank === 'EFGB' ? '#0d5a70' : '#a86d12', pattern: reefwide ? '/' : '', opacity: reefwide ? 0.85 : 0.97 };
+}
+function addOptions(selectId, values, selectedValue=null) {
+  const sel = document.getElementById(selectId); sel.innerHTML = '';
+  values.forEach(v => { const o=document.createElement('option'); o.value=v; o.textContent=v; if (selectedValue!==null && String(v)===String(selectedValue)) o.selected=true; sel.appendChild(o); });
+}
+function makeCheckboxes(containerId, values, checked=true, swatches=null) {
+  const c = document.getElementById(containerId); c.innerHTML = '';
+  values.forEach(v => {
+    const label = document.createElement('label'); label.className = 'toggle-pill';
+    if (swatches && swatches[v]) { label.classList.add('swatched'); label.style.setProperty('--sw', swatches[v]); }
+    const input = document.createElement('input'); input.type='checkbox'; input.value=v; input.checked=checked;
+    label.appendChild(input); label.appendChild(document.createTextNode(' ' + v)); c.appendChild(label);
+  });
+}
+function checkedValues(id){ return [...document.querySelectorAll(`#${id} input:checked`)].map(i=>i.value); }
+function missingYears(rows) {
+  const y = years(rows); if (!y.length) return [];
+  const present = new Set(y), gaps = [];
+  for (let yr=y[0]; yr<=y[y.length-1]; yr++) if (!present.has(yr)) gaps.push(yr);
+  return gaps;
+}
+function splitConsecutiveRows(rows) {
+  const seg=[]; let cur=[];
+  rows.forEach(r => { if (!cur.length || r.year === cur[cur.length-1].year + 1) cur.push(r); else { seg.push(cur); cur=[r]; } });
+  if (cur.length) seg.push(cur);
+  return seg;
+}
+function showEmpty(id, msg) { const el=document.getElementById(id); if (msg){ el.textContent=msg; el.style.display='block'; } else el.style.display='none'; }
+function downloadCSV(filename, header, rows) {
+  const esc = v => { const s = v==null?'':String(v); return /[",\n]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s; };
+  const body = [header.join(','), ...rows.map(r => r.map(esc).join(','))].join('\n');
+  const blob = new Blob([body], {type:'text/csv'}); const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click();
+  a.remove(); URL.revokeObjectURL(url);
+}
+
+/* ---------------- controls ---------------- */
+function bindSegmented(id, attr, stateKey, after) {
+  const wrap = document.getElementById(id);
+  wrap.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
+    wrap.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active'); STATE[stateKey] = btn.dataset[attr]; after();
+  }));
+}
+function initControls() {
+  const y3 = years(DATA.fig3);
+  addOptions('chart1-start-year', y3, y3[0]); addOptions('chart1-end-year', y3, y3[y3.length-1]);
+  const groups = GROUP_ORDER.filter(g => DATA.fig3.some(r => r.plot_group === g));
+  makeCheckboxes('chart1-bank-controls', BANKS, true);
+  makeCheckboxes('chart1-group-controls', groups, true, COLORS);
+
+  const y1 = years(DATA.fig1); addOptions('chart2-year', y1, y1[y1.length-1]);
+  makeCheckboxes('chart2-scope-controls', uniq(DATA.fig1.map(r=>r.survey_scope)), true);
+
+  const y2 = years(DATA.fig2); addOptions('chart3-year', y2, y2[y2.length-1]);
+  makeCheckboxes('chart3-scope-controls', uniq(DATA.fig2.map(r=>r.survey_scope)), true);
+
+  bindSegmented('chart1-view','view','chart1View', drawChart1);
+  bindSegmented('chart2-mode','mode','chart2Mode', drawChart2);
+  bindSegmented('chart3-orient','orient','chart3Orient', drawChart3);
+
+  document.querySelectorAll('#chart1-start-year,#chart1-end-year,#chart1-se,#chart1-prov,#chart1-bank-controls input,#chart1-group-controls input').forEach(el => el.addEventListener('change', drawChart1));
+  document.querySelectorAll('#chart2-year,#chart2-scope-controls input').forEach(el => el.addEventListener('change', drawChart2));
+  document.querySelectorAll('#chart3-year,#chart3-topn,#chart3-scope-controls input').forEach(el => el.addEventListener('change', drawChart3));
+
+  document.getElementById('chart1-reset-years').addEventListener('click', () => { addOptions('chart1-start-year', y3, y3[0]); addOptions('chart1-end-year', y3, y3[y3.length-1]); drawChart1(); });
+  document.getElementById('chart1-export').addEventListener('click', exportChart1);
+  document.getElementById('chart2-export').addEventListener('click', exportChart2);
+  document.getElementById('chart3-export').addEventListener('click', exportChart3);
+
+  // --- Chart 4: phase-shift (Coral vs Macroalgae, fig3) ---
+  addOptions('chart4-start-year', y3, y3[0]); addOptions('chart4-end-year', y3, y3[y3.length-1]);
+  makeCheckboxes('chart4-bank-controls', BANKS, true);
+  document.querySelectorAll('#chart4-start-year,#chart4-end-year,#chart4-se,#chart4-fill,#chart4-bank-controls input').forEach(el => el.addEventListener('change', drawChart4));
+  document.getElementById('chart4-reset-years').addEventListener('click', () => { addOptions('chart4-start-year', y3, y3[0]); addOptions('chart4-end-year', y3, y3[y3.length-1]); drawChart4(); });
+  document.getElementById('chart4-export').addEventListener('click', exportChart4);
+}
+function updateMetrics() {
+  const y = years(DATA.fig3), gaps = missingYears(DATA.fig3);
+  const allYears = years([...DATA.fig1, ...DATA.fig2, ...DATA.fig3]);
+  const banks = uniq([...DATA.fig1, ...DATA.fig3].map(r=>r.bank));
+  const species = uniq(DATA.fig2.map(r=>r.species_label));
+  document.getElementById('metric-years').innerHTML = `${allYears[0]}<small>–</small>${allYears[allYears.length-1]}`;
+  document.getElementById('metric-banks').innerHTML = `${banks.length} <small>${banks.join(' · ')}</small>`;
+  document.getElementById('metric-species').textContent = species.length;
+  document.getElementById('metric-gaps').innerHTML = gaps.length ? `${gaps.length} <small>${gaps.join(', ')}</small>` : 'None';
+}
+
+/* ---------------- layout base ---------------- */
+function baseLayout(height) {
+  return {
+    font:{family:'Libre Franklin, sans-serif', size:13, color:'#0d2733'},
+    margin:{l:72,r:28,t:78,b:70}, height,
+    paper_bgcolor:'#ffffff', plot_bgcolor:'#ffffff',
+    hovermode:'x unified',
+    legend:{orientation:'h', yanchor:'bottom', y:1.035, xanchor:'right', x:1, font:{size:12}},
+    title:{font:{family:'Archivo, sans-serif', size:18, color:'#0d2733'}}
+  };
+}
+
+/* ---------------- CHART 1 ---------------- */
+function drawChart1() {
+  const startSel = document.getElementById('chart1-start-year');
+  const endSel = document.getElementById('chart1-end-year');
+  if (!startSel.value) return;
+  const lo = Math.min(+startSel.value, +endSel.value);
+  const hi = Math.max(+startSel.value, +endSel.value);
+  const banks = checkedValues('chart1-bank-controls');
+  const groups = checkedValues('chart1-group-controls');
+  const showSE = document.getElementById('chart1-se').checked;
+  const showProv = document.getElementById('chart1-prov').checked;
+  const isArea = STATE.chart1View === 'area';
+  document.getElementById('chart1-se').closest('.toggle-pill').style.opacity = isArea ? 0.4 : 1;
+
+  if (!banks.length || !groups.length) {
+    showEmpty('chart1-empty', 'Select at least one bank panel and one benthic group.');
+    Plotly.purge('chart1-benthic-subplots'); return;
+  }
+  showEmpty('chart1-empty', null);
+
+  const domains = banks.length === 2 ? {'EFGB':[0.56,1.0],'WFGB':[0.0,0.44]} : {[banks[0]]:[0.0,1.0]};
+  const traces = [], annotations = [], shapes = [];
+
+  banks.forEach((bank, bIdx) => {
+    const sfx = bIdx === 0 ? '' : String(bIdx+1);
+    if (isArea) {
+      // unified year axis across groups for clean stacking
+      const yrs = uniq(DATA.fig3.filter(r => r.bank===bank && groups.includes(r.plot_group) && r.year>=lo && r.year<=hi).map(r=>r.year)).sort((a,b)=>a-b);
+      groups.forEach(group => {
+        const byYear = {};
+        DATA.fig3.filter(r => r.bank===bank && r.plot_group===group).forEach(r => byYear[r.year]=r);
+        const x = yrs, y = yrs.map(yr => byYear[yr] ? byYear[yr].mean_percent_cover : null);
+        if (!y.some(v => v != null)) return;
+        const color = COLORS[group] || '#777';
+        traces.push({
+          x, y, type:'scatter', mode:'lines', stackgroup:'b'+bIdx, stackgaps:'interpolate',
+          fillcolor:hexToRgba(color,0.72), line:{color:hexToRgba(color,0.95), width:1.1},
+          name:group, legendgroup:group, showlegend:bIdx===0,
+          xaxis:'x'+sfx, yaxis:'y'+sfx,
+          hovertemplate:`<b>${bank}</b> · ${group}<br>%{x}: %{y:.2f}%<extra></extra>`
+        });
+      });
+    } else {
+      groups.forEach(group => {
+        const rows = DATA.fig3.filter(r => r.bank===bank && r.plot_group===group && r.year>=lo && r.year<=hi).sort((a,b)=>a.year-b.year);
+        if (!rows.length) return;
+        const color = COLORS[group] || '#777';
+        splitConsecutiveRows(rows).forEach((seg, segIdx) => {
+          const x = seg.map(r=>r.year), y = seg.map(r=>r.mean_percent_cover), se = seg.map(r=>r.se_percent_cover||0);
+          if (showSE && seg.length > 1) {
+            const upper = y.map((v,i)=>v+se[i]), lower = y.map((v,i)=>Math.max(0,v-se[i])).reverse();
+            traces.push({ x:[...x,...x.slice().reverse()], y:[...upper,...lower], type:'scatter', mode:'lines', fill:'toself',
+              fillcolor:hexToRgba(color,0.15), line:{width:0}, hoverinfo:'skip', showlegend:false, legendgroup:group, xaxis:'x'+sfx, yaxis:'y'+sfx });
+          }
+          traces.push({
+            x, y, type:'scatter', mode:'lines+markers', connectgaps:false,
+            name:group, showlegend:bIdx===0 && segIdx===0,
+            line:{color, width:2.4}, marker:{color, size:6, symbol: bank==='EFGB' ? 'triangle-up' : 'circle'},
+            hovertemplate:`<b>${bank}</b> · ${group}<br>Year %{x}: %{y:.2f}%<extra></extra>`,
+            legendgroup:group, xaxis:'x'+sfx, yaxis:'y'+sfx
+          });
+        });
+      });
+    }
+
+    // provenance shading + gap markers
+    if (showProv) {
+      const a0 = Math.max(lo, APPENDIX_RANGE[0]) - 0.5, a1 = Math.min(hi, APPENDIX_RANGE[1]) + 0.5;
+      if (a1 > a0) {
+        shapes.push({type:'rect', xref:'x'+sfx, yref:'y'+sfx+' domain', x0:a0, x1:a1, y0:0, y1:1,
+          fillcolor:'rgba(227,161,59,0.12)', line:{width:0}, layer:'below'});
+        if (bIdx === 0) annotations.push({text:'appendix branch (2004–2008)', x:(a0+a1)/2, y:0.99, xref:'x'+sfx, yref:'y'+sfx+' domain',
+          showarrow:false, font:{family:'IBM Plex Mono, monospace', size:10, color:'#a86d12'}, yanchor:'top'});
+      }
+      missingYears(DATA.fig3).forEach(yr => {
+        if (yr >= lo && yr <= hi) shapes.push({type:'line', xref:'x'+sfx, yref:'y'+sfx+' domain', x0:yr, x1:yr, y0:0, y1:1,
+          line:{color:'rgba(192,69,63,0.5)', width:1, dash:'dot'}, layer:'below'});
+      });
+    }
+
+    annotations.push({text:`${bank==='EFGB'?'East':'West'} Flower Garden Bank`, x:0.5, y:domains[bank][1],
+      xref:'paper', yref:'paper', showarrow:false, xanchor:'center', yanchor:'bottom',
+      font:{family:'Archivo, sans-serif', size:16, color:'#0d2733'}});
+  });
+
+  const layout = baseLayout(840);
+  banks.forEach((bank, bIdx) => {
+    const sfx = bIdx===0 ? '' : String(bIdx+1), last = bIdx === banks.length-1;
+    layout['xaxis'+sfx] = {domain:[0,1], anchor:'y'+sfx, range:[lo-0.5,hi+0.5], tickmode:'linear',
+      dtick:Math.max(1, Math.ceil((hi-lo)/16)), tickangle:-45, gridcolor:'rgba(13,39,51,0.06)',
+      linecolor:'rgba(13,39,51,0.22)', zeroline:false, title:{text:last?'Year':''}, showticklabels:last};
+    layout['yaxis'+sfx] = {domain:domains[bank], anchor:'x'+sfx, title:{text:'Mean percent cover'},
+      gridcolor:'rgba(13,39,51,0.06)', linecolor:'rgba(13,39,51,0.22)', zeroline:false,
+      range: isArea ? undefined : [0,100], autorange: isArea ? true : false};
+  });
+  layout.annotations = annotations;
+  layout.shapes = shapes;
+  Plotly.react('chart1-benthic-subplots', traces, layout, PLOT_CONFIG);
+}
+
+/* ---------------- CHART 2 ---------------- */
+function drawChart2() {
+  const year = +document.getElementById('chart2-year').value;
+  const scopes = checkedValues('chart2-scope-controls');
+  const rows = DATA.fig1.filter(r => r.year===year && scopes.includes(r.survey_scope));
+  if (!scopes.length) { showEmpty('chart2-empty','Select at least one survey scope.'); Plotly.purge('chart2-composition'); return; }
+  if (!rows.length) { showEmpty('chart2-empty', `No ${selectedScopeText(scopes)} data for ${year}. Reef-wide surveys exist only for recent years.`); Plotly.purge('chart2-composition'); return; }
+  showEmpty('chart2-empty', null);
+
+  const groups = GROUP_ORDER.filter(g => rows.some(r => r.plot_group===g));
+  const stacked = STATE.chart2Mode === 'stack';
+  const traces = [];
+  BANKS.forEach(bank => scopes.forEach(scope => {
+    const br = groups.map(g => rows.find(r => r.bank===bank && r.survey_scope===scope && r.plot_group===g));
+    if (!br.some(Boolean)) return;
+    const s = bankScopeStyle(bank, scope);
+    traces.push({
+      type:'bar', name:`${bank} · ${scopeLabel(scope)}`, x:groups, y:br.map(r=>r?r.mean_percent_cover:null),
+      error_y:{type:'data', array:br.map(r=>r?r.se_percent_cover:0), visible:!stacked, thickness:1, color:s.lineColor},
+      marker:{color:s.color, opacity:s.opacity, line:{color:s.lineColor, width:1}, pattern:{shape:s.pattern}},
+      hovertemplate:`<b>${bank}</b> · ${scopeLabel(scope)}<br>%{x}: %{y:.2f}%<extra></extra>`
+    });
+  }));
+  const layout = baseLayout(560);
+  Object.assign(layout, {
+    title:{text:`${year} · benthic cover composition (${selectedScopeText(scopes)})`, x:0.01, xanchor:'left', font:{family:'Archivo, sans-serif', size:18}},
+    yaxis:{title:{text:'Mean percent cover'}, range: stacked ? undefined : [0,100], gridcolor:'rgba(13,39,51,0.06)', zeroline:false},
+    xaxis:{title:{text:''}, categoryorder:'array', categoryarray:groups, linecolor:'rgba(13,39,51,0.22)'},
+    barmode: stacked ? 'stack' : 'group', hovermode:'x unified'
+  });
+  Plotly.react('chart2-composition', traces, layout, PLOT_CONFIG);
+}
+
+/* ---------------- CHART 3 ---------------- */
+function drawChart3() {
+  const year = +document.getElementById('chart3-year').value;
+  const scopes = checkedValues('chart3-scope-controls');
+  const topnValue = document.getElementById('chart3-topn').value;
+  const horiz = STATE.chart3Orient === 'h';
+  const rows = DATA.fig2.filter(r => r.year===year && scopes.includes(r.survey_scope));
+  if (!scopes.length) { showEmpty('chart3-empty','Select at least one survey scope.'); Plotly.purge('chart3-species'); return; }
+  if (!rows.length) { showEmpty('chart3-empty', `No ${selectedScopeText(scopes)} species data for ${year}.`); Plotly.purge('chart3-species'); return; }
+  showEmpty('chart3-empty', null);
+
+  const totals = {};
+  rows.forEach(r => totals[r.species_label] = (totals[r.species_label]||0) + (r.mean_percent_cover||0));
+  let species = Object.keys(totals).sort((a,b)=>totals[b]-totals[a]);
+  if (topnValue !== 'All') species = species.slice(0, +topnValue);
+  // horizontal bars read top-down, so reverse for plotting
+  const cats = horiz ? species.slice().reverse() : species;
+
+  const traces = [];
+  BANKS.forEach(bank => scopes.forEach(scope => {
+    const br = cats.map(sp => rows.find(r => r.bank===bank && r.survey_scope===scope && r.species_label===sp));
+    if (!br.some(Boolean)) return;
+    const s = bankScopeStyle(bank, scope);
+    const vals = br.map(r=>r?r.mean_percent_cover:null), errs = br.map(r=>r?r.se_percent_cover:0);
+    traces.push({
+      type:'bar', orientation: horiz ? 'h' : 'v', name:`${bank} · ${scopeLabel(scope)}`,
+      x: horiz ? vals : cats, y: horiz ? cats : vals,
+      [horiz?'error_x':'error_y']:{type:'data', array:errs, visible:true, thickness:1, color:s.lineColor},
+      marker:{color:s.color, opacity:s.opacity, line:{color:s.lineColor, width:1}, pattern:{shape:s.pattern}},
+      hovertemplate: horiz ? `<b>${bank}</b> · ${scopeLabel(scope)}<br>%{y}: %{x:.2f}%<extra></extra>`
+                           : `<b>${bank}</b> · ${scopeLabel(scope)}<br>%{x}: %{y:.2f}%<extra></extra>`
+    });
+  }));
+  const layout = baseLayout(horiz ? Math.max(440, cats.length*26 + 150) : 640);
+  const valAxis = {title:{text:'Mean percent cover'}, gridcolor:'rgba(13,39,51,0.06)', zeroline:false};
+  const catAxis = {title:{text:''}, automargin:true, categoryorder:'array', categoryarray:cats, linecolor:'rgba(13,39,51,0.22)'};
+  Object.assign(layout, {
+    title:{text:`${year} · coral species cover (${selectedScopeText(scopes)})`, x:0.01, xanchor:'left', font:{family:'Archivo, sans-serif', size:18}},
+    barmode:'group',
+    hovermode: horiz ? 'y unified' : 'x unified',
+    xaxis: horiz ? valAxis : Object.assign({tickangle:-45}, catAxis),
+    yaxis: horiz ? catAxis : valAxis,
+    margin: horiz ? {l:230,r:28,t:78,b:60} : {l:72,r:28,t:78,b:170}
+  });
+  Plotly.react('chart3-species', traces, layout, PLOT_CONFIG);
+}
+
+/* ---------------- exports ---------------- */
+function exportChart1() {
+  const lo = Math.min(+document.getElementById('chart1-start-year').value, +document.getElementById('chart1-end-year').value);
+  const hi = Math.max(+document.getElementById('chart1-start-year').value, +document.getElementById('chart1-end-year').value);
+  const banks = checkedValues('chart1-bank-controls'), groups = checkedValues('chart1-group-controls');
+  const rows = DATA.fig3.filter(r => banks.includes(r.bank) && groups.includes(r.plot_group) && r.year>=lo && r.year<=hi)
+    .sort((a,b)=> a.bank.localeCompare(b.bank) || a.plot_group.localeCompare(b.plot_group) || a.year-b.year);
+  downloadCSV(`fig1_benthic_timeseries_${lo}-${hi}.csv`,
+    ['year','bank','plot_group','n_transects','mean_percent_cover','se_percent_cover','data_source_branch'],
+    rows.map(r => [r.year,r.bank,r.plot_group,r.n_transects,r.mean_percent_cover,r.se_percent_cover,r.data_source_branch]));
+}
+function exportChart2() {
+  const year = +document.getElementById('chart2-year').value, scopes = checkedValues('chart2-scope-controls');
+  const rows = DATA.fig1.filter(r => r.year===year && scopes.includes(r.survey_scope));
+  downloadCSV(`fig2_composition_${year}.csv`,
+    ['year','bank','survey_scope','plot_group','n_transects','mean_percent_cover','se_percent_cover'],
+    rows.map(r => [r.year,r.bank,r.survey_scope,r.plot_group,r.n_transects,r.mean_percent_cover,r.se_percent_cover]));
+}
+function exportChart3() {
+  const year = +document.getElementById('chart3-year').value, scopes = checkedValues('chart3-scope-controls');
+  const rows = DATA.fig2.filter(r => r.year===year && scopes.includes(r.survey_scope));
+  downloadCSV(`fig3_species_${year}.csv`,
+    ['year','bank','survey_scope','species_label','n_transects','mean_percent_cover','se_percent_cover'],
+    rows.map(r => [r.year,r.bank,r.survey_scope,r.species_label,r.n_transects,r.mean_percent_cover,r.se_percent_cover]));
+}
+
+/* ---------------- CHART 4: phase-shift (Coral vs Macroalgae, direct CSV series) ---------------- */
+function splitConsecutiveYears(arr) {
+  const seg=[]; let cur=[];
+  arr.forEach(y => { if (!cur.length || y === cur[cur.length-1]+1) cur.push(y); else { seg.push(cur); cur=[y]; } });
+  if (cur.length) seg.push(cur);
+  return seg;
+}
+function drawChart4() {
+  if (!document.getElementById('chart4-start-year').value) return;
+  const lo = Math.min(+document.getElementById('chart4-start-year').value, +document.getElementById('chart4-end-year').value);
+  const hi = Math.max(+document.getElementById('chart4-start-year').value, +document.getElementById('chart4-end-year').value);
+  const banks = checkedValues('chart4-bank-controls');
+  const showSE = document.getElementById('chart4-se').checked;
+  const showFill = document.getElementById('chart4-fill').checked;
+  if (!banks.length) { showEmpty('chart4-empty','Select at least one bank panel.'); Plotly.purge('chart4-phaseshift'); return; }
+  showEmpty('chart4-empty', null);
+
+  const domains = banks.length === 2 ? {'EFGB':[0.56,1.0],'WFGB':[0.0,0.44]} : {[banks[0]]:[0.0,1.0]};
+  const traces = [], annotations = [];
+
+  banks.forEach((bank, bIdx) => {
+    const sfx = bIdx===0 ? '' : String(bIdx+1);
+    const byGroup = {};
+    PHASE_GROUPS.forEach(g => {
+      byGroup[g] = {};
+      DATA.fig3.filter(r => r.bank===bank && r.plot_group===g && r.year>=lo && r.year<=hi).forEach(r => byGroup[g][r.year] = r);
+    });
+
+    // visual fill between the two CSV series (no derived value), over runs where both exist
+    if (showFill) {
+      const common = uniq(Object.keys(byGroup['Coral']).filter(y => byGroup['Macroalgae'][y]).map(Number)).sort((a,b)=>a-b);
+      splitConsecutiveYears(common).forEach(run => {
+        if (run.length < 2) return;
+        const cor = run.map(y => byGroup['Coral'][y].mean_percent_cover);
+        const mac = run.map(y => byGroup['Macroalgae'][y].mean_percent_cover);
+        traces.push({ x:[...run, ...run.slice().reverse()], y:[...cor, ...mac.slice().reverse()], type:'scatter', mode:'lines',
+          fill:'toself', fillcolor:'rgba(124,138,160,0.16)', line:{width:0}, hoverinfo:'skip', showlegend:false, xaxis:'x'+sfx, yaxis:'y'+sfx });
+      });
+    }
+
+    PHASE_GROUPS.forEach(group => {
+      const rows = Object.values(byGroup[group]).sort((a,b)=>a.year-b.year);
+      if (!rows.length) return;
+      const color = COLORS[group];
+      splitConsecutiveRows(rows).forEach((seg, segIdx) => {
+        const x = seg.map(r=>r.year), y = seg.map(r=>r.mean_percent_cover), se = seg.map(r=>r.se_percent_cover||0);
+        if (showSE && seg.length > 1) {
+          const upper = y.map((v,i)=>v+se[i]), lower = y.map((v,i)=>Math.max(0,v-se[i])).reverse();
+          traces.push({ x:[...x,...x.slice().reverse()], y:[...upper,...lower], type:'scatter', mode:'lines', fill:'toself',
+            fillcolor:hexToRgba(color,0.14), line:{width:0}, hoverinfo:'skip', showlegend:false, legendgroup:group, xaxis:'x'+sfx, yaxis:'y'+sfx });
+        }
+        traces.push({
+          x, y, type:'scatter', mode:'lines+markers', connectgaps:false,
+          name:group, showlegend: bIdx===0 && segIdx===0, legendgroup:group,
+          line:{color, width:2.6}, marker:{color, size:6, symbol: bank==='EFGB' ? 'triangle-up' : 'circle'},
+          hovertemplate:`<b>${bank}</b> · ${group}<br>Year %{x}: %{y:.2f}%<extra></extra>`,
+          xaxis:'x'+sfx, yaxis:'y'+sfx
+        });
+      });
+    });
+
+    annotations.push({text:`${bank==='EFGB'?'East':'West'} Flower Garden Bank`, x:0.5, y:domains[bank][1],
+      xref:'paper', yref:'paper', showarrow:false, xanchor:'center', yanchor:'bottom', font:{family:'Archivo, sans-serif', size:16, color:'#0d2733'}});
+  });
+
+  const layout = baseLayout(780);
+  banks.forEach((bank, bIdx) => {
+    const sfx = bIdx===0 ? '' : String(bIdx+1), last = bIdx === banks.length-1;
+    layout['xaxis'+sfx] = {domain:[0,1], anchor:'y'+sfx, range:[lo-0.5,hi+0.5], tickmode:'linear',
+      dtick:Math.max(1, Math.ceil((hi-lo)/16)), tickangle:-45, gridcolor:'rgba(13,39,51,0.06)',
+      linecolor:'rgba(13,39,51,0.22)', zeroline:false, title:{text:last?'Year':''}, showticklabels:last};
+    layout['yaxis'+sfx] = {domain:domains[bank], anchor:'x'+sfx, range:[0,100], title:{text:'Mean percent cover'},
+      gridcolor:'rgba(13,39,51,0.06)', linecolor:'rgba(13,39,51,0.22)', zeroline:false};
+  });
+  layout.annotations = annotations;
+  Plotly.react('chart4-phaseshift', traces, layout, PLOT_CONFIG);
+}
+
+
+/* ---------------- exports ---------------- */
+function exportChart4() {
+  const lo = Math.min(+document.getElementById('chart4-start-year').value, +document.getElementById('chart4-end-year').value);
+  const hi = Math.max(+document.getElementById('chart4-start-year').value, +document.getElementById('chart4-end-year').value);
+  const banks = checkedValues('chart4-bank-controls');
+  const rows = DATA.fig3.filter(r => banks.includes(r.bank) && PHASE_GROUPS.includes(r.plot_group) && r.year>=lo && r.year<=hi)
+    .sort((a,b)=> a.bank.localeCompare(b.bank) || a.plot_group.localeCompare(b.plot_group) || a.year-b.year);
+  downloadCSV(`fig4_coral_macroalgae_${lo}-${hi}.csv`,
+    ['year','bank','plot_group','n_transects','mean_percent_cover','se_percent_cover','data_source_branch'],
+    rows.map(r => [r.year,r.bank,r.plot_group,r.n_transects,r.mean_percent_cover,r.se_percent_cover,r.data_source_branch]));
+}
+/* ---------------- boot ---------------- */
+function redrawAll(){ drawChart1(); drawChart2(); drawChart3(); drawChart4(); }
+function boot(){ initControls(); updateMetrics(); setStatus('', false); document.getElementById('manual-loader').style.display='none'; redrawAll(); }
+
+async function start() {
+  try { await loadAllFromFetch(); boot(); }
+  catch (err) {
+    setStatus(`<strong>CSV loading was blocked or a file was missing.</strong> Keep this HTML beside the CSVs and run a local web server (<code>py -m http.server 8000</code>), then open <code>http://localhost:8000/</code> — or use the manual selector below. Browser message: ${err.message}`);
+    document.getElementById('manual-loader').style.display='block';
+  }
+}
+document.getElementById('manual-files').addEventListener('change', async (evt) => {
+  const byName = Object.fromEntries([...evt.target.files].map(f => [f.name, f]));
+  async function readNamed(name){ if (!byName[name]) throw new Error(`Missing ${name}`); return parseCSV(await byName[name].text()); }
+  try {
+    DATA.fig1 = dedupeRows([...(await readNamed(DATA_FILES.fig1Main)), ...(await readNamed(DATA_FILES.fig1Appendix))]);
+    DATA.fig2 = dedupeRows([...(await readNamed(DATA_FILES.fig2Main)), ...(await readNamed(DATA_FILES.fig2Appendix))]);
+    DATA.fig3 = dedupeRows([...(await readNamed(DATA_FILES.fig3Main)), ...(await readNamed(DATA_FILES.fig3Appendix))]);
+    boot();
+  } catch (err) { setStatus(`<strong>Manual CSV load failed:</strong> ${err.message}`); }
+});
+start();
+</script>
+</body>
+</html>
