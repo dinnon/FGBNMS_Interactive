@@ -254,6 +254,58 @@ code {
   .section-head { flex-direction:column; }
   .provenance-list { columns:1; }
 }
+
+@media (max-width:640px) {
+  /* Hero: tighter padding, smaller subtitle */
+  .hero-inner { padding:36px 16px 28px; }
+  .kicker { font-size:10px; letter-spacing:.18em; }
+  .hero p { font-size:14px; }
+
+  /* Shell + sections: reduce side padding */
+  .shell { padding:0 10px; }
+  .section { padding:14px 12px 10px; border-radius:12px; margin-top:14px; }
+  .section h2 { font-size:20px; }
+  .section p.lede { font-size:13px; }
+
+  /* Controls: stack vertically, let items breathe */
+  .chart-controls {
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+    padding:10px 12px;
+    border-radius:10px;
+  }
+  .chart-control { width:100%; }
+  .chart-control select { width:100%; min-width:0; }
+  .chart-control-group { gap:6px; }
+
+  /* Toggle pills: smaller touch targets that still work */
+  .toggle-pill { font-size:11.5px; padding:5px 9px 5px 8px; }
+
+  /* Segmented buttons */
+  .segmented button { padding:7px 10px; font-size:11.5px; }
+
+  /* Charts: reduce height on mobile for subplot panels */
+  #chart1-benthic-subplots { height:600px !important; }
+  #chart4-phaseshift { height:560px !important; }
+  #chart2-composition { height:420px !important; }
+  #chart3-species { height:500px !important; }
+
+  /* Figures: allow horizontal scroll if Plotly overflows */
+  .figure { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+
+  /* Notes / footer: smaller text */
+  .note { font-size:10.5px; padding:4px 2px 12px; }
+  .footer { font-size:11.5px; padding:20px 4px 4px; }
+  .provenance-list li { font-size:10.5px; }
+}
+
+@media (max-width:380px) {
+  .hero-inner { padding:28px 12px 22px; }
+  h1 { font-size:28px; }
+  .section h2 { font-size:18px; }
+  .chart-controls { padding:8px 10px; }
+}
 </style>
 </head>
 <body>
@@ -581,13 +633,14 @@ function updateMetrics() {
 
 /* ---------------- layout base ---------------- */
 function baseLayout(height) {
+  const mobile = window.innerWidth < 640;
   return {
-    font:{family:'Libre Franklin, sans-serif', size:13, color:'#0d2733'},
-    margin:{l:72,r:28,t:78,b:70}, height,
+    font:{family:'Libre Franklin, sans-serif', size: mobile ? 11 : 13, color:'#0d2733'},
+    margin:{l: mobile ? 46 : 72, r: mobile ? 12 : 28, t: mobile ? 52 : 78, b: mobile ? 50 : 70}, height,
     paper_bgcolor:'#ffffff', plot_bgcolor:'#ffffff',
     hovermode:'x unified',
-    legend:{orientation:'h', yanchor:'bottom', y:1.035, xanchor:'right', x:1, font:{size:12}},
-    title:{font:{family:'Archivo, sans-serif', size:18, color:'#0d2733'}}
+    legend:{orientation:'h', yanchor:'bottom', y:1.035, xanchor:'right', x:1, font:{size: mobile ? 10 : 12}},
+    title:{font:{family:'Archivo, sans-serif', size: mobile ? 14 : 18, color:'#0d2733'}}
   };
 }
 
@@ -716,7 +769,7 @@ function drawChart2() {
   }));
   const layout = baseLayout(560);
   Object.assign(layout, {
-    title:{text:`${year} · benthic cover composition (${selectedScopeText(scopes)})`, x:0.01, xanchor:'left', font:{family:'Archivo, sans-serif', size:18}},
+    title:{text:`${year} · benthic cover composition (${selectedScopeText(scopes)})`, x:0.01, xanchor:'left', font:{family:'Archivo, sans-serif', size: window.innerWidth < 640 ? 14 : 18}},
     yaxis:{title:{text:'Mean percent cover'}, range: stacked ? undefined : [0,100], gridcolor:'rgba(13,39,51,0.06)', zeroline:false},
     xaxis:{title:{text:''}, categoryorder:'array', categoryarray:groups, linecolor:'rgba(13,39,51,0.22)'},
     barmode: stacked ? 'stack' : 'group', hovermode:'x unified'
@@ -730,6 +783,7 @@ function drawChart3() {
   const scopes = checkedValues('chart3-scope-controls');
   const topnValue = document.getElementById('chart3-topn').value;
   const horiz = STATE.chart3Orient === 'h';
+  const mobile = window.innerWidth < 640;
   const rows = DATA.fig2.filter(r => r.year===year && scopes.includes(r.survey_scope));
   if (!scopes.length) { showEmpty('chart3-empty','Select at least one survey scope.'); Plotly.purge('chart3-species'); return; }
   if (!rows.length) { showEmpty('chart3-empty', `No ${selectedScopeText(scopes)} species data for ${year}.`); Plotly.purge('chart3-species'); return; }
@@ -761,12 +815,14 @@ function drawChart3() {
   const valAxis = {title:{text:'Mean percent cover'}, gridcolor:'rgba(13,39,51,0.06)', zeroline:false};
   const catAxis = {title:{text:''}, automargin:true, categoryorder:'array', categoryarray:cats, linecolor:'rgba(13,39,51,0.22)'};
   Object.assign(layout, {
-    title:{text:`${year} · coral species cover (${selectedScopeText(scopes)})`, x:0.01, xanchor:'left', font:{family:'Archivo, sans-serif', size:18}},
+    title:{text:`${year} · coral species cover (${selectedScopeText(scopes)})`, x:0.01, xanchor:'left', font:{family:'Archivo, sans-serif', size: mobile ? 14 : 18}},
     barmode:'group',
     hovermode: horiz ? 'y unified' : 'x unified',
     xaxis: horiz ? valAxis : Object.assign({tickangle:-45}, catAxis),
     yaxis: horiz ? catAxis : valAxis,
-    margin: horiz ? {l:230,r:28,t:78,b:60} : {l:72,r:28,t:78,b:170}
+    margin: horiz
+      ? {l: mobile ? 140 : 230, r: mobile ? 12 : 28, t: mobile ? 52 : 78, b: mobile ? 40 : 60}
+      : {l: mobile ? 46 : 72, r: mobile ? 12 : 28, t: mobile ? 52 : 78, b: mobile ? 120 : 170}
   });
   Plotly.react('chart3-species', traces, layout, PLOT_CONFIG);
 }
@@ -909,6 +965,18 @@ document.getElementById('manual-files').addEventListener('change', async (evt) =
   } catch (err) { setStatus(`<strong>Manual CSV load failed:</strong> ${err.message}`); }
 });
 start();
+
+/* Relayout Plotly charts on resize / orientation change */
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    ['chart1-benthic-subplots','chart2-composition','chart3-species','chart4-phaseshift'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.data) Plotly.Plots.resize(el);
+    });
+  }, 200);
+});
 </script>
 </body>
 </html>
