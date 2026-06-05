@@ -27,28 +27,55 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior:smooth; }
+/* layered background: reef image on html, tinted overlay on body */
+html {
+  /* ✏️  PAGE BACKGROUND IMAGE — change path or set to 'none' to disable */
+  background: url('hero-reef.jpg') center/cover no-repeat fixed var(--paper);
+}
 body {
   margin:0;
   font-family:"Libre Franklin", system-ui, sans-serif;
   color:var(--ink);
-  background:var(--paper);
+  /* ✏️  Adjust last value (0.94) to control reef visibility: lower = more reef, higher = more muted */
+  background:rgba(243,247,246,0.94);
   -webkit-font-smoothing:antialiased;
 }
 
 /* ---------- HERO ---------- */
+/*
+ * ──────────────────────────────────────────────────────
+ *  IMAGE CONFIGURATION — edit these paths to swap images
+ * ──────────────────────────────────────────────────────
+ *  Hero banner:  set in .hero-bg below
+ *  Page accents: set in .page-accent-1 and .page-accent-2 below
+ *
+ *  All images should be placed in the same folder as this HTML file.
+ *  Recommended sizes:
+ *    hero banner  — landscape, 1600px+ wide
+ *    page accents — any, ~600–1200px wide works well
+ * ──────────────────────────────────────────────────────
+ */
 .hero {
   position:relative;
   overflow:hidden;
   color:#eaf4f5;
+}
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  /* ✏️  HERO IMAGE — change this filename to swap the banner photo */
+  background: url('hero-reef.jpg') center 60%/cover no-repeat;
+}
+.hero-bg::after {
+  /* dark overlay so white text stays readable */
+  content:"";
+  position:absolute; inset:0;
   background:
-    radial-gradient(120% 90% at 12% -10%, rgba(45,156,184,.40), transparent 55%),
-    radial-gradient(90% 80% at 92% 0%, rgba(227,161,59,.22), transparent 50%),
-    linear-gradient(168deg, var(--abyss) 0%, var(--deep) 58%, var(--shelf) 100%);
+    linear-gradient(168deg, rgba(6,32,44,0.82) 0%, rgba(10,48,64,0.72) 50%, rgba(15,68,88,0.60) 100%);
 }
 .hero::after {
   /* faint bathymetric contour lines */
   content:"";
-  position:absolute; inset:0;
+  position:absolute; inset:0; z-index:1;
   background-image:
     repeating-radial-gradient(circle at 18% 120%, rgba(255,255,255,.05) 0 1px, transparent 1px 46px);
   opacity:.7;
@@ -56,7 +83,7 @@ body {
 }
 .hero-inner {
   position:relative;
-  z-index:1;
+  z-index:2;
   max-width:1180px;
   margin:0 auto;
   padding:58px 22px 42px;
@@ -68,6 +95,7 @@ body {
   font-size:11.5px;
   font-weight:500;
   color:#7fd0dd;
+  text-shadow:0 1px 6px rgba(0,0,0,0.4);
 }
 h1 {
   font-family:"Archivo", system-ui, sans-serif;
@@ -77,6 +105,7 @@ h1 {
   line-height:1.0;
   letter-spacing:-.02em;
   max-width:14ch;
+  text-shadow:0 2px 12px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.25);
 }
 .hero p {
   max-width:62ch;
@@ -84,6 +113,7 @@ h1 {
   line-height:1.6;
   color:rgba(232,244,246,.82);
   margin:0;
+  text-shadow:0 1px 6px rgba(0,0,0,0.3);
 }
 .hero p code { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.16); color:#dff1f3; }
 
@@ -92,41 +122,10 @@ h1 {
   max-width:1180px;
   margin:0 auto 70px;
   padding:0 22px;
+  position:relative;
 }
 
-/* ---------- METRICS ---------- */
-.cards {
-  display:grid;
-  grid-template-columns:repeat(4, minmax(0,1fr));
-  gap:13px;
-  margin:-34px 0 26px;
-  position:relative;
-  z-index:2;
-}
-.metric {
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:16px 18px;
-  box-shadow:0 14px 38px rgba(6,32,44,.14);
-}
-.metric .label {
-  font-family:"IBM Plex Mono", monospace;
-  color:var(--muted);
-  font-size:10.5px;
-  text-transform:uppercase;
-  font-weight:500;
-  letter-spacing:.12em;
-}
-.metric .value {
-  font-family:"Archivo", system-ui, sans-serif;
-  font-size:30px;
-  font-weight:560;
-  margin-top:6px;
-  letter-spacing:-.02em;
-  color:var(--ink);
-}
-.metric .value small { font-size:14px; color:var(--faint); font-family:"Libre Franklin", sans-serif; }
+/* ---------- METRICS (removed) ---------- */
 
 /* ---------- SECTIONS ---------- */
 .section {
@@ -252,29 +251,23 @@ code {
 .provenance-list li { margin:3px 0; break-inside:avoid; font-family:"IBM Plex Mono", monospace; font-size:11.5px; }
 
 @media (max-width:900px) {
-  .cards { grid-template-columns:repeat(2, minmax(0,1fr)); }
   .section-head { flex-direction:column; }
   .provenance-list { columns:1; }
 }
-@media (max-width:560px) { .cards { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 <header class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="kicker">Flower Garden Banks · CPCe Monitoring Pipeline</div>
     <h1>Long-Term Reef Cover at the Flower Garden Banks</h1>
     <p>A CSV-driven viewer for the CPCe benthic monitoring record. Every chart renders directly from the pipeline-product summary files in this folder — reading pre-computed fields like <code>mean_percent_cover</code> and <code>se_percent_cover</code> rather than re-deriving anything from raw point counts.</p>
   </div>
+  <a href="https://flowergarden.noaa.gov/" target="_blank" rel="noopener" style="position:absolute;bottom:6px;right:14px;z-index:3;font-size:9px;color:rgba(255,255,255,0.35);text-decoration:none;">Photo: FGBNMS / NOAA</a>
 </header>
 
 <main class="shell">
-  <div class="cards">
-    <div class="metric"><div class="label">Record span</div><div class="value" id="metric-years">—</div></div>
-    <div class="metric"><div class="label">Banks monitored</div><div class="value" id="metric-banks">—</div></div>
-    <div class="metric"><div class="label">Coral taxa tracked</div><div class="value" id="metric-species">—</div></div>
-    <div class="metric"><div class="label">Time-series gaps</div><div class="value" id="metric-gaps">—</div></div>
-  </div>
 
   <div class="status" id="load-status"></div>
   <div class="file-loader" id="manual-loader">
@@ -583,14 +576,7 @@ function initControls() {
   document.getElementById('chart4-export').addEventListener('click', exportChart4);
 }
 function updateMetrics() {
-  const y = years(DATA.fig3), gaps = missingYears(DATA.fig3);
-  const allYears = years([...DATA.fig1, ...DATA.fig2, ...DATA.fig3]);
-  const banks = uniq([...DATA.fig1, ...DATA.fig3].map(r=>r.bank));
-  const species = uniq(DATA.fig2.map(r=>r.species_label));
-  document.getElementById('metric-years').innerHTML = `${allYears[0]}<small>–</small>${allYears[allYears.length-1]}`;
-  document.getElementById('metric-banks').innerHTML = `${banks.length} <small>${banks.join(' · ')}</small>`;
-  document.getElementById('metric-species').textContent = species.length;
-  document.getElementById('metric-gaps').innerHTML = gaps.length ? `${gaps.length} <small>${gaps.join(', ')}</small>` : 'None';
+  // metric cards removed from page
 }
 
 /* ---------------- layout base ---------------- */
