@@ -715,7 +715,7 @@ function drawChart1() {
       if (a1 > a0) {
         shapes.push({type:'rect', xref:'x'+sfx, yref:'y'+sfx+' domain', x0:a0, x1:a1, y0:0, y1:1,
           fillcolor:'rgba(227,161,59,0.12)', line:{width:0}, layer:'below'});
-        if (bIdx === 0) annotations.push({text:'appendix branch (2004–2008)', x:(a0+a1)/2, y:0.99, xref:'x'+sfx, yref:'y'+sfx+' domain',
+        if (bIdx === 0) annotations.push({text:'linear video footage derived (2004–2008)', x:(a0+a1)/2, y:0.99, xref:'x'+sfx, yref:'y'+sfx+' domain',
           showarrow:false, font:{family:'IBM Plex Mono, monospace', size:10, color:'#a86d12'}, yanchor:'top'});
       }
       missingYears(DATA.fig3).forEach(yr => {
