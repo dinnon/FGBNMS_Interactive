@@ -1352,70 +1352,70 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2015,WFGB,study_site,RT,Unknown Coral II (C2),16,0.0,0.0,0.0,cpce
 2015,WFGB,study_site,RT,Unknown Coral III (C3),16,0.0,0.0,0.0,cpce
 2015,WFGB,study_site,RT,Unknown Coral IV (C4),16,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Agaricia agaricites (AGAG),19,0.2789473684210526,0.27614196704759,0.06335131202268333,cpce
-2016,EFGB,study_site,RT,Agaricia fragilis (AGFR),19,0.04421052631578947,0.10879725228728508,0.024959801476588158,cpce
-2016,EFGB,study_site,RT,Agaricia sp (AGSP),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),19,0.03,0.09510228411791403,0.021817960303677917,cpce
-2016,EFGB,study_site,RT,Colpophyllia natans (CONA),19,2.4578947368421056,2.8913598856427565,0.6633234500486365,cpce
-2016,EFGB,study_site,RT,Colpophyllia sp (COSP),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Crustose Coralline Algae (CCA),19,3.0489473684210524,1.9923545387774573,0.4570774786439749,cpce
-2016,EFGB,study_site,RT,Madracis auretenra (MAAU),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Madracis decactis (MADE),19,0.13263157894736843,0.22032405692179763,0.05054580520805362,cpce
-2016,EFGB,study_site,RT,Madracis sp (MASP),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Millepora alcicornis (MIAL),19,0.19263157894736843,0.21860268640372185,0.05015089572738612,cpce
-2016,EFGB,study_site,RT,Montastraea cavernosa (MOCA),19,2.290526315789474,1.696579806827746,0.3892221014533632,cpce
-2016,EFGB,study_site,RT,Mussa angulosa (MUAN),19,0.1368421052631579,0.2805758489562918,0.06436851429466356,cpce
-2016,EFGB,study_site,RT,Orbicella annularis (ORAN),19,0.7831578947368422,2.2329727386293787,0.512279079545617,cpce
-2016,EFGB,study_site,RT,Orbicella faveolata (ORFA),19,4.218421052631579,4.320410555539954,0.9911701582213199,cpce
-2016,EFGB,study_site,RT,Orbicella franksi (ORFR),19,18.93578947368421,10.70553663390505,2.45601854334551,cpce
-2016,EFGB,study_site,RT,Orbicella spp. (ORSP),19,1.55,2.1573414709364447,0.49492807676428163,cpce
-2016,EFGB,study_site,RT,Porites asteroides (POAS),19,5.2563157894736845,3.1342980970870506,0.7190572981123309,cpce
-2016,EFGB,study_site,RT,Porites furcata (POFU),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Pseudodiploria strigosa (PSST),19,8.74842105263158,6.162332948520475,1.4137361357395672,cpce
-2016,EFGB,study_site,RT,Scolymia cubensis (SCCU),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Scolymia sp (SCSP),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Siderastrea radians (SIRA),19,0.042631578947368416,0.10555894115838568,0.024216881952450496,cpce
-2016,EFGB,study_site,RT,Siderastrea siderea (SISI),19,0.9478947368421053,2.7693271925533116,0.6353272302073204,cpce
-2016,EFGB,study_site,RT,Siderastrea sp (SISP),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Stephanocoenia intersepta (STIN),19,0.9842105263157894,0.7521326404112042,0.17255106166793974,cpce
-2016,EFGB,study_site,RT,Stephaocoenia sp (STSP),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Tubastrea coccinea (TUCO),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Unknown Coral I (C1),19,0.27,0.31069813860616113,0.07127904148054996,cpce
-2016,EFGB,study_site,RT,Unknown Coral II (C2),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Unknown Coral III (C3),19,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Unknown Coral IV (C4),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Agaricia agaricites (AGAG),19,0.14157894736842105,0.1400897790662488,0.032138799472248326,cpce
-2016,WFGB,study_site,RT,Agaricia fragilis (AGFR),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Agaricia sp (AGSP),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Colpophyllia natans (CONA),19,2.3394736842105264,2.0852483829782607,0.4783887880833599,cpce
-2016,WFGB,study_site,RT,Colpophyllia sp (COSP),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Crustose Coralline Algae (CCA),19,2.9578947368421056,1.311312230585024,0.30083565771310655,cpce
-2016,WFGB,study_site,RT,Madracis auretenra (MAAU),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Madracis decactis (MADE),19,0.15052631578947367,0.4448279777897984,0.10205053697080453,cpce
-2016,WFGB,study_site,RT,Madracis sp (MASP),19,0.015263157894736841,0.05092133596185739,0.01168215565935894,cpce
-2016,WFGB,study_site,RT,Millepora alcicornis (MIAL),19,0.9347368421052632,1.8490038411745833,0.4241905731525546,cpce
-2016,WFGB,study_site,RT,Montastraea cavernosa (MOCA),19,3.4073684210526314,3.5081030678278147,0.8048140397992871,cpce
-2016,WFGB,study_site,RT,Mussa angulosa (MUAN),19,0.04526315789473684,0.1441977200102011,0.03308122575860207,cpce
-2016,WFGB,study_site,RT,Orbicella annularis (ORAN),19,0.014736842105263156,0.04869045321126235,0.011170356055952001,cpce
-2016,WFGB,study_site,RT,Orbicella faveolata (ORFA),19,6.6821052631578945,8.425702462602397,1.932988713832928,cpce
-2016,WFGB,study_site,RT,Orbicella franksi (ORFR),19,26.835789473684212,11.482106037845474,2.6341757830519277,cpce
-2016,WFGB,study_site,RT,Orbicella spp. (ORSP),19,1.416842105263158,1.5118460115279928,0.3468412622339762,cpce
-2016,WFGB,study_site,RT,Porites asteroides (POAS),19,3.5894736842105264,1.991720288494933,0.45693197164995203,cpce
-2016,WFGB,study_site,RT,Porites furcata (POFU),19,0.028421052631578948,0.06635453244962387,0.015222773757568465,cpce
-2016,WFGB,study_site,RT,Pseudodiploria strigosa (PSST),19,8.367368421052632,6.933531120660639,1.590661130360739,cpce
-2016,WFGB,study_site,RT,Scolymia cubensis (SCCU),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Scolymia sp (SCSP),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Siderastrea radians (SIRA),19,0.014736842105263156,0.04869045321126235,0.011170356055952001,cpce
-2016,WFGB,study_site,RT,Siderastrea siderea (SISI),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Siderastrea sp (SISP),19,0.01631578947368421,0.053563101552778075,0.012288218251114008,cpce
-2016,WFGB,study_site,RT,Stephanocoenia intersepta (STIN),19,0.6426315789473684,0.5169229698176956,0.11859026247527688,cpce
-2016,WFGB,study_site,RT,Stephaocoenia sp (STSP),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Tubastrea coccinea (TUCO),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Unknown Coral I (C1),19,0.32473684210526316,0.36556453178691284,0.0838662553369429,cpce
-2016,WFGB,study_site,RT,Unknown Coral II (C2),19,0.01631578947368421,0.053563101552778075,0.012288218251114008,cpce
-2016,WFGB,study_site,RT,Unknown Coral III (C3),19,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Unknown Coral IV (C4),19,0.014736842105263156,0.04869045321126235,0.011170356055952001,cpce
+2016,EFGB,study_site,RT,Agaricia agaricites (AGAG),16,0.29,0.29736621641784844,0.07434155410446211,cpce
+2016,EFGB,study_site,RT,Agaricia fragilis (AGFR),16,0.040625,0.11744324870620135,0.029360812176550337,cpce
+2016,EFGB,study_site,RT,Agaricia sp (AGSP),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.025625,0.1025,0.025625,cpce
+2016,EFGB,study_site,RT,Colpophyllia natans (CONA),16,2.5168749999999998,3.1321211529356057,0.7830302882339014,cpce
+2016,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,3.256875,2.0537793414418535,0.5134448353604634,cpce
+2016,EFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Madracis decactis (MADE),16,0.130625,0.23901098301124155,0.059752745752810386,cpce
+2016,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Millepora alcicornis (MIAL),16,0.1975,0.23662910500049086,0.059157276250122716,cpce
+2016,EFGB,study_site,RT,Montastraea cavernosa (MOCA),16,2.428125,1.786065391673366,0.4465163479183415,cpce
+2016,EFGB,study_site,RT,Mussa angulosa (MUAN),16,0.130625,0.30402782219176366,0.07600695554794092,cpce
+2016,EFGB,study_site,RT,Orbicella annularis (ORAN),16,0.698125,2.4076024554176993,0.6019006138544248,cpce
+2016,EFGB,study_site,RT,Orbicella faveolata (ORFA),16,4.371875,4.66261331408328,1.16565332852082,cpce
+2016,EFGB,study_site,RT,Orbicella franksi (ORFR),16,20.3825,10.624896234787425,2.656224058696856,cpce
+2016,EFGB,study_site,RT,Orbicella spp. (ORSP),16,1.560625,2.3410438376929212,0.5852609594232303,cpce
+2016,EFGB,study_site,RT,Porites asteroides (POAS),16,5.6425,3.1617811435961216,0.7904452858990304,cpce
+2016,EFGB,study_site,RT,Porites furcata (POFU),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Pseudodiploria strigosa (PSST),16,9.304375,6.439476136819413,1.6098690342048532,cpce
+2016,EFGB,study_site,RT,Scolymia cubensis (SCCU),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Scolymia sp (SCSP),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Siderastrea radians (SIRA),16,0.039375,0.11422018210456504,0.02855504552614126,cpce
+2016,EFGB,study_site,RT,Siderastrea siderea (SISI),16,0.839375,2.9848025479083202,0.7462006369770801,cpce
+2016,EFGB,study_site,RT,Siderastrea sp (SISP),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Stephanocoenia intersepta (STIN),16,1.0418749999999999,0.7947177171801318,0.19867942929503296,cpce
+2016,EFGB,study_site,RT,Stephaocoenia sp (STSP),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Tubastrea coccinea (TUCO),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Unknown Coral I (C1),16,0.276875,0.3362284689512971,0.08405711723782427,cpce
+2016,EFGB,study_site,RT,Unknown Coral II (C2),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Unknown Coral III (C3),16,0.0,0.0,0.0,cpce
+2016,EFGB,study_site,RT,Unknown Coral IV (C4),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Agaricia agaricites (AGAG),16,0.146875,0.15107255431304079,0.037768138578260196,cpce
+2016,WFGB,study_site,RT,Agaricia fragilis (AGFR),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Agaricia sp (AGSP),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Colpophyllia natans (CONA),16,2.450625,2.2342827894725708,0.5585706973681427,cpce
+2016,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,3.223125,1.132700129484116,0.283175032371029,cpce
+2016,WFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Madracis decactis (MADE),16,0.133125,0.47937068120609966,0.11984267030152491,cpce
+2016,WFGB,study_site,RT,Madracis sp (MASP),16,0.01375,0.05499999999999999,0.013749999999999998,cpce
+2016,WFGB,study_site,RT,Millepora alcicornis (MIAL),16,0.8975,2.0031891240386335,0.5007972810096584,cpce
+2016,WFGB,study_site,RT,Montastraea cavernosa (MOCA),16,3.529375,3.7866774684411664,0.9466693671102916,cpce
+2016,WFGB,study_site,RT,Mussa angulosa (MUAN),16,0.03875,0.155,0.03875,cpce
+2016,WFGB,study_site,RT,Orbicella annularis (ORAN),16,0.013125,0.0525,0.013125,cpce
+2016,WFGB,study_site,RT,Orbicella faveolata (ORFA),16,6.79625,9.13681992453246,2.284204981133115,cpce
+2016,WFGB,study_site,RT,Orbicella franksi (ORFR),16,29.28875,9.575814586759707,2.3939536466899267,cpce
+2016,WFGB,study_site,RT,Orbicella spp. (ORSP),16,1.46375,1.633931353107182,0.4084828382767955,cpce
+2016,WFGB,study_site,RT,Porites asteroides (POAS),16,3.8674999999999997,1.9634612295637517,0.4908653073909379,cpce
+2016,WFGB,study_site,RT,Porites furcata (POFU),16,0.026250000000000002,0.07182153808805082,0.017955384522012705,cpce
+2016,WFGB,study_site,RT,Pseudodiploria strigosa (PSST),16,8.808125,7.387348842221184,1.846837210555296,cpce
+2016,WFGB,study_site,RT,Scolymia cubensis (SCCU),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Scolymia sp (SCSP),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Siderastrea radians (SIRA),16,0.013125,0.0525,0.013125,cpce
+2016,WFGB,study_site,RT,Siderastrea siderea (SISI),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Siderastrea sp (SISP),16,0.014375,0.0575,0.014375,cpce
+2016,WFGB,study_site,RT,Stephanocoenia intersepta (STIN),16,0.6775,0.5494057395647289,0.13735143489118223,cpce
+2016,WFGB,study_site,RT,Stephaocoenia sp (STSP),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Tubastrea coccinea (TUCO),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Unknown Coral I (C1),16,0.33375,0.3956408303836532,0.0989102075959133,cpce
+2016,WFGB,study_site,RT,Unknown Coral II (C2),16,0.014375,0.0575,0.014375,cpce
+2016,WFGB,study_site,RT,Unknown Coral III (C3),16,0.0,0.0,0.0,cpce
+2016,WFGB,study_site,RT,Unknown Coral IV (C4),16,0.013125,0.0525,0.013125,cpce
 2017,EFGB,study_site,RT,Agaricia agaricites (AGAG),16,0.646112582009085,0.5269486439305472,0.1317371609826368,cpce
 2017,EFGB,study_site,RT,Agaricia fragilis (AGFR),16,0.02566735112936345,0.10266940451745378,0.025667351129363445,cpce
 2017,EFGB,study_site,RT,Agaricia lamarcki (AGLA),16,0.0,0.0,0.0,cpce
