@@ -543,6 +543,30 @@ function uniq(arr) { return [...new Set(arr)].filter(v => v !== undefined && v !
 function years(rows) { return uniq(rows.map(r => r.year)).sort((a,b)=>a-b); }
 function setStatus(msg, show=true) { const el=document.getElementById('load-status'); el.innerHTML=msg; el.style.display=show?'block':'none'; }
 function hexToRgba(hex, a) { const h=hex.replace('#',''); return `rgba(${parseInt(h.slice(0,2),16)},${parseInt(h.slice(2,4),16)},${parseInt(h.slice(4,6),16)},${a})`; }
+/* Display-only italicisation of scientific names for chart labels.
+ * Taxon names go italic; rank abbreviations (sp., spp., cf., var.), qualifiers
+ * ("species complex") and the trailing (CODE) stay roman, per journal style.
+ * Returns Plotly-flavoured HTML — never used for data, lookups, or CSV export. */
+const SPECIES_ROMAN_WORDS = new Set(['sp','sp.','spp','spp.','cf','cf.','aff','aff.','var','var.','f.','subsp','subsp.','species','complex','group','and']);
+const SPECIES_NOT_TAXA = [/^crustose/i, /^unknown/i, /^unidentified/i, /^other/i, /^bare/i, /^turf/i, /^sand/i, /^no\s/i];
+
+function italicizeSpecies(label) {
+  const raw = String(label ?? '').trim();
+  if (!raw) return raw;
+  const codeMatch = raw.match(/\s*\([^()]*\)$/);          // trailing (POAS) etc.
+  const code = codeMatch ? codeMatch[0] : '';
+  const name = code ? raw.slice(0, raw.length - code.length) : raw;
+  if (!/^[A-Z]/.test(name) || SPECIES_NOT_TAXA.some(re => re.test(name))) return raw;
+  const runs = [];
+  name.split(/\s+/).forEach(w => {
+    const ital = !SPECIES_ROMAN_WORDS.has(w.toLowerCase());
+    const last = runs[runs.length - 1];
+    if (last && last.ital === ital) last.words.push(w);
+    else runs.push({ital, words:[w]});
+  });
+  return runs.map(r => r.ital ? `<i>${r.words.join(' ')}</i>` : r.words.join(' ')).join(' ') + code;
+}
+
 function scopeLabel(s){ return String(s||'').replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase()); }
 function selectedScopeText(s){ return s.length ? s.map(scopeLabel).join(' + ') : 'No scope selected'; }
 function bankScopeStyle(bank, scope) {
@@ -795,6 +819,8 @@ function drawChart3() {
   if (topnValue !== 'All') species = species.slice(0, +topnValue);
   // horizontal bars read top-down, so reverse for plotting
   const cats = horiz ? species.slice().reverse() : species;
+  // Axis/hover labels only; `cats` stays raw so row lookups and CSV export are unaffected.
+  const catLabels = cats.map(italicizeSpecies);
 
   const traces = [];
   BANKS.forEach(bank => scopes.forEach(scope => {
@@ -804,7 +830,7 @@ function drawChart3() {
     const vals = br.map(r=>r?r.mean_percent_cover:null), errs = br.map(r=>r?r.se_percent_cover:0);
     traces.push({
       type:'bar', orientation: horiz ? 'h' : 'v', name:`${bank} · ${scopeLabel(scope)}`,
-      x: horiz ? vals : cats, y: horiz ? cats : vals,
+      x: horiz ? vals : catLabels, y: horiz ? catLabels : vals,
       [horiz?'error_x':'error_y']:{type:'data', array:errs, visible:true, thickness:1, color:s.lineColor},
       marker:{color:s.color, opacity:s.opacity, line:{color:s.lineColor, width:1}, pattern:{shape:s.pattern}},
       hovertemplate: horiz ? `<b>${bank}</b> · ${scopeLabel(scope)}<br>%{y}: %{x:.2f}%<extra></extra>`
@@ -813,7 +839,7 @@ function drawChart3() {
   }));
   const layout = baseLayout(horiz ? Math.max(440, cats.length*26 + 150) : 640);
   const valAxis = {title:{text:'Mean percent cover'}, gridcolor:'rgba(13,39,51,0.06)', zeroline:false};
-  const catAxis = {title:{text:''}, automargin:true, categoryorder:'array', categoryarray:cats, linecolor:'rgba(13,39,51,0.22)'};
+  const catAxis = {title:{text:''}, automargin:true, categoryorder:'array', categoryarray:catLabels, linecolor:'rgba(13,39,51,0.22)'};
   Object.assign(layout, {
     title:{text:`${year} · coral species cover (${selectedScopeText(scopes)})`, x:0.01, xanchor:'left', font:{family:'Archivo, sans-serif', size: mobile ? 14 : 18}},
     barmode:'group',
