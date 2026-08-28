@@ -6,7 +6,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1991,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),2,0.0,0.0,0.0,cpce
 1991,WFGB,study_site,RT,Colpophyllia natans (CONA),2,1.3895576141594281,0.09941412288700173,0.07029640043911167,cpce
 1991,WFGB,study_site,RT,Colpophyllia sp (COSP),2,0.0,0.0,0.0,cpce
-1991,WFGB,study_site,RT,Crustose Coralline Algae (CCA),2,5.191662012338783,4.3569714678970035,3.080844070386277,cpce
 1991,WFGB,study_site,RT,Madracis auretenra (MAAU),2,0.0,0.0,0.0,cpce
 1991,WFGB,study_site,RT,Madracis decactis (MADE),2,0.0,0.0,0.0,cpce
 1991,WFGB,study_site,RT,Madracis sp (MASP),2,0.0,0.0,0.0,cpce
@@ -38,7 +37,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1992,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),18,0.033106631560068316,0.07619681885729639,0.017959762439612427,cpce
 1992,EFGB,study_site,RT,Colpophyllia natans (CONA),18,2.24206035721064,3.2258138529716067,0.7603316167605759,cpce
 1992,EFGB,study_site,RT,Colpophyllia sp (COSP),18,0.0,0.0,0.0,cpce
-1992,EFGB,study_site,RT,Crustose Coralline Algae (CCA),18,2.797797134517801,1.2106910147037493,0.28536260880621445,cpce
 1992,EFGB,study_site,RT,Madracis auretenra (MAAU),18,0.0,0.0,0.0,cpce
 1992,EFGB,study_site,RT,Madracis decactis (MADE),18,0.5131502780558977,0.7489344744983387,0.17652554852738628,cpce
 1992,EFGB,study_site,RT,Madracis sp (MASP),18,0.0,0.0,0.0,cpce
@@ -70,7 +68,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1992,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),18,0.06522821546754815,0.11585662891066782,0.027307669316048878,cpce
 1992,WFGB,study_site,RT,Colpophyllia natans (CONA),18,3.2729478038830964,5.4244051651153455,1.2785445587187985,cpce
 1992,WFGB,study_site,RT,Colpophyllia sp (COSP),18,0.0,0.0,0.0,cpce
-1992,WFGB,study_site,RT,Crustose Coralline Algae (CCA),18,3.5012172629964313,1.641021823272923,0.38679255310379873,cpce
 1992,WFGB,study_site,RT,Madracis auretenra (MAAU),18,0.0,0.0,0.0,cpce
 1992,WFGB,study_site,RT,Madracis decactis (MADE),18,0.15345686573677228,0.325452066438078,0.07670978770984659,cpce
 1992,WFGB,study_site,RT,Madracis sp (MASP),18,0.0,0.0,0.0,cpce
@@ -102,7 +99,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1994,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),14,0.014637002341920372,0.054766647932873835,0.014637002341920372,cpce
 1994,EFGB,study_site,RT,Colpophyllia natans (CONA),14,0.9648688052853837,2.334260608631396,0.6238573892100785,cpce
 1994,EFGB,study_site,RT,Colpophyllia sp (COSP),14,0.0,0.0,0.0,cpce
-1994,EFGB,study_site,RT,Crustose Coralline Algae (CCA),14,6.229671580856807,2.059366532783511,0.5503888571046045,cpce
 1994,EFGB,study_site,RT,Madracis auretenra (MAAU),14,0.0,0.0,0.0,cpce
 1994,EFGB,study_site,RT,Madracis decactis (MADE),14,0.32480169382854457,0.4338942090943021,0.11596310518115233,cpce
 1994,EFGB,study_site,RT,Madracis sp (MASP),14,0.0,0.0,0.0,cpce
@@ -134,7 +130,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1994,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),15,0.04291845493562232,0.1662224612106187,0.042918454935622304,cpce
 1994,WFGB,study_site,RT,Colpophyllia natans (CONA),15,2.7569818535873583,2.4253287359219513,0.6262171868869335,cpce
 1994,WFGB,study_site,RT,Colpophyllia sp (COSP),15,0.0,0.0,0.0,cpce
-1994,WFGB,study_site,RT,Crustose Coralline Algae (CCA),15,6.091398560558758,1.7052964585210255,0.4403056522798946,cpce
 1994,WFGB,study_site,RT,Madracis auretenra (MAAU),15,0.0,0.0,0.0,cpce
 1994,WFGB,study_site,RT,Madracis decactis (MADE),15,0.2458241636276295,0.5607071759649958,0.144773970307428,cpce
 1994,WFGB,study_site,RT,Madracis sp (MASP),15,0.0,0.0,0.0,cpce
@@ -166,7 +161,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1995,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),14,0.0,0.0,0.0,cpce
 1995,EFGB,study_site,RT,Colpophyllia natans (CONA),14,6.720962370547215,6.303093082053306,1.6845724849991772,cpce
 1995,EFGB,study_site,RT,Colpophyllia sp (COSP),14,0.0,0.0,0.0,cpce
-1995,EFGB,study_site,RT,Crustose Coralline Algae (CCA),14,2.493579698458871,2.0284931172102807,0.5421375897164247,cpce
 1995,EFGB,study_site,RT,Madracis auretenra (MAAU),14,0.0,0.0,0.0,cpce
 1995,EFGB,study_site,RT,Madracis decactis (MADE),14,0.015394088669950736,0.0575994055845742,0.015394088669950734,cpce
 1995,EFGB,study_site,RT,Madracis sp (MASP),14,0.0,0.0,0.0,cpce
@@ -198,7 +192,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1995,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),18,0.0671662346762363,0.16171777808484608,0.03811724584073864,cpce
 1995,WFGB,study_site,RT,Colpophyllia natans (CONA),18,0.9830361695201584,1.3486980064553544,0.3178911687124531,cpce
 1995,WFGB,study_site,RT,Colpophyllia sp (COSP),18,0.0,0.0,0.0,cpce
-1995,WFGB,study_site,RT,Crustose Coralline Algae (CCA),18,5.925461030789672,2.84896160648192,0.6715066904278286,cpce
 1995,WFGB,study_site,RT,Madracis auretenra (MAAU),18,0.0,0.0,0.0,cpce
 1995,WFGB,study_site,RT,Madracis decactis (MADE),18,0.4772482504175236,0.9862178266953684,0.23245377099445147,cpce
 1995,WFGB,study_site,RT,Madracis sp (MASP),18,0.0,0.0,0.0,cpce
@@ -230,7 +223,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1996,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),8,0.12353736479842675,0.2511867708762225,0.08880793451546425,cpce
 1996,EFGB,study_site,RT,Colpophyllia natans (CONA),8,2.354820302636171,2.655347955433567,0.9388072728484547,cpce
 1996,EFGB,study_site,RT,Colpophyllia sp (COSP),8,0.0,0.0,0.0,cpce
-1996,EFGB,study_site,RT,Crustose Coralline Algae (CCA),8,5.087017732180801,1.0370642595092092,0.3666575852125836,cpce
 1996,EFGB,study_site,RT,Madracis auretenra (MAAU),8,0.0,0.0,0.0,cpce
 1996,EFGB,study_site,RT,Madracis decactis (MADE),8,0.46819082770014875,0.38454576476875224,0.13595745897227582,cpce
 1996,EFGB,study_site,RT,Madracis sp (MASP),8,0.0,0.0,0.0,cpce
@@ -262,7 +254,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1996,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),8,0.21292540980529515,0.35038182019847314,0.12387868053341299,cpce
 1996,WFGB,study_site,RT,Colpophyllia natans (CONA),8,2.195711899800768,1.9477824458691833,0.6886450878751094,cpce
 1996,WFGB,study_site,RT,Colpophyllia sp (COSP),8,0.0,0.0,0.0,cpce
-1996,WFGB,study_site,RT,Crustose Coralline Algae (CCA),8,8.887153491645082,3.2847360537283237,1.1613295689996186,cpce
 1996,WFGB,study_site,RT,Madracis auretenra (MAAU),8,0.0,0.0,0.0,cpce
 1996,WFGB,study_site,RT,Madracis decactis (MADE),8,0.09822497647892718,0.11635970383932315,0.04113936782082187,cpce
 1996,WFGB,study_site,RT,Madracis sp (MASP),8,0.0,0.0,0.0,cpce
@@ -294,7 +285,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1997,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),8,0.0,0.0,0.0,cpce
 1997,EFGB,study_site,RT,Colpophyllia natans (CONA),8,2.8396314531934204,0.6207447437299194,0.2194664088386658,cpce
 1997,EFGB,study_site,RT,Colpophyllia sp (COSP),8,0.0,0.0,0.0,cpce
-1997,EFGB,study_site,RT,Crustose Coralline Algae (CCA),8,4.942196732614756,1.6777214753426022,0.5931641160785265,cpce
 1997,EFGB,study_site,RT,Madracis auretenra (MAAU),8,0.0,0.0,0.0,cpce
 1997,EFGB,study_site,RT,Madracis decactis (MADE),8,0.45144748766712406,0.5317847801914514,0.18801431210258643,cpce
 1997,EFGB,study_site,RT,Madracis sp (MASP),8,0.0,0.0,0.0,cpce
@@ -326,7 +316,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1997,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),8,0.10222450516898882,0.12204015707539329,0.043147711322541,cpce
 1997,WFGB,study_site,RT,Colpophyllia natans (CONA),8,1.4404779888602728,1.714564203674539,0.6061899875989897,cpce
 1997,WFGB,study_site,RT,Colpophyllia sp (COSP),8,0.0,0.0,0.0,cpce
-1997,WFGB,study_site,RT,Crustose Coralline Algae (CCA),8,7.2561080412090675,3.478128921980458,1.229704273286719,cpce
 1997,WFGB,study_site,RT,Madracis auretenra (MAAU),8,0.0,0.0,0.0,cpce
 1997,WFGB,study_site,RT,Madracis decactis (MADE),8,0.05102840974121435,0.07691349264761536,0.027193026107935243,cpce
 1997,WFGB,study_site,RT,Madracis sp (MASP),8,0.0,0.0,0.0,cpce
@@ -358,7 +347,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1998,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),7,0.0,0.0,0.0,cpce
 1998,EFGB,study_site,RT,Colpophyllia natans (CONA),7,2.4634558113363423,2.540400174532413,0.9601810131996923,cpce
 1998,EFGB,study_site,RT,Colpophyllia sp (COSP),7,0.0,0.0,0.0,cpce
-1998,EFGB,study_site,RT,Crustose Coralline Algae (CCA),7,5.8655755058364605,1.2970200417849709,0.4902274965756624,cpce
 1998,EFGB,study_site,RT,Madracis auretenra (MAAU),7,0.0,0.0,0.0,cpce
 1998,EFGB,study_site,RT,Madracis decactis (MADE),7,0.7048149383684272,0.8273362986230445,0.31270372811046365,cpce
 1998,EFGB,study_site,RT,Madracis sp (MASP),7,0.0,0.0,0.0,cpce
@@ -390,7 +378,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1998,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),8,0.0,0.0,0.0,cpce
 1998,WFGB,study_site,RT,Colpophyllia natans (CONA),8,0.6391389513876887,0.9646184808707967,0.3410441345408031,cpce
 1998,WFGB,study_site,RT,Colpophyllia sp (COSP),8,0.0,0.0,0.0,cpce
-1998,WFGB,study_site,RT,Crustose Coralline Algae (CCA),8,10.11075053252004,3.2247140285142817,1.1401085784749192,cpce
 1998,WFGB,study_site,RT,Madracis auretenra (MAAU),8,0.0,0.0,0.0,cpce
 1998,WFGB,study_site,RT,Madracis decactis (MADE),8,0.0265647678101038,0.04920245690778506,0.017395695465266852,cpce
 1998,WFGB,study_site,RT,Madracis sp (MASP),8,0.0,0.0,0.0,cpce
@@ -422,7 +409,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1999,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),8,0.0,0.0,0.0,cpce
 1999,EFGB,study_site,RT,Colpophyllia natans (CONA),8,4.152174185383372,3.7143337119944104,1.3132152776705242,cpce
 1999,EFGB,study_site,RT,Colpophyllia sp (COSP),8,0.0,0.0,0.0,cpce
-1999,EFGB,study_site,RT,Crustose Coralline Algae (CCA),8,1.915653192846866,0.5670172374006582,0.20047086680783394,cpce
 1999,EFGB,study_site,RT,Madracis auretenra (MAAU),8,0.0,0.0,0.0,cpce
 1999,EFGB,study_site,RT,Madracis decactis (MADE),8,0.2701504492155539,0.2821735662373612,0.09976342107901476,cpce
 1999,EFGB,study_site,RT,Madracis sp (MASP),8,0.0,0.0,0.0,cpce
@@ -454,7 +440,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 1999,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),10,0.11455396024662612,0.18743609429741612,0.05927249737059327,cpce
 1999,WFGB,study_site,RT,Colpophyllia natans (CONA),10,0.8213823335427524,1.0988710771153385,0.3474935458566999,cpce
 1999,WFGB,study_site,RT,Colpophyllia sp (COSP),10,0.0,0.0,0.0,cpce
-1999,WFGB,study_site,RT,Crustose Coralline Algae (CCA),10,7.4921578680455125,2.0750368610868266,0.6561842709840788,cpce
 1999,WFGB,study_site,RT,Madracis auretenra (MAAU),10,0.0,0.0,0.0,cpce
 1999,WFGB,study_site,RT,Madracis decactis (MADE),10,0.45644134038847073,0.6103034634872834,0.19299490085092244,cpce
 1999,WFGB,study_site,RT,Madracis sp (MASP),10,0.0,0.0,0.0,cpce
@@ -486,7 +471,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2000,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),12,0.0,0.0,0.0,cpce
 2000,EFGB,study_site,RT,Colpophyllia natans (CONA),12,4.7793732318974955,3.269793568825229,0.9439080985778766,cpce
 2000,EFGB,study_site,RT,Colpophyllia sp (COSP),12,0.0,0.0,0.0,cpce
-2000,EFGB,study_site,RT,Crustose Coralline Algae (CCA),12,4.224256993081677,1.718890193557311,0.49620085797886077,cpce
 2000,EFGB,study_site,RT,Madracis auretenra (MAAU),12,0.0,0.0,0.0,cpce
 2000,EFGB,study_site,RT,Madracis decactis (MADE),12,0.3262828821473118,0.3792075479742075,0.10946778995082333,cpce
 2000,EFGB,study_site,RT,Madracis sp (MASP),12,0.0,0.0,0.0,cpce
@@ -518,7 +502,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2000,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),9,0.0,0.0,0.0,cpce
 2000,WFGB,study_site,RT,Colpophyllia natans (CONA),9,2.332453621668253,2.279804092974511,0.7599346976581703,cpce
 2000,WFGB,study_site,RT,Colpophyllia sp (COSP),9,0.0,0.0,0.0,cpce
-2000,WFGB,study_site,RT,Crustose Coralline Algae (CCA),9,4.653757573450367,2.4860249133755272,0.8286749711251757,cpce
 2000,WFGB,study_site,RT,Madracis auretenra (MAAU),9,0.0,0.0,0.0,cpce
 2000,WFGB,study_site,RT,Madracis decactis (MADE),9,0.2554449096906992,0.42199098052494927,0.14066366017498308,cpce
 2000,WFGB,study_site,RT,Madracis sp (MASP),9,0.0,0.0,0.0,cpce
@@ -550,7 +533,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2001,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),10,0.04664179104477611,0.14749429385113708,0.04664179104477611,cpce
 2001,EFGB,study_site,RT,Colpophyllia natans (CONA),10,2.676251318536302,1.967362171790611,0.6221345445313794,cpce
 2001,EFGB,study_site,RT,Colpophyllia sp (COSP),10,0.0,0.0,0.0,cpce
-2001,EFGB,study_site,RT,Crustose Coralline Algae (CCA),10,2.950758934732914,0.9726953321868498,0.30759327191245356,cpce
 2001,EFGB,study_site,RT,Madracis auretenra (MAAU),10,0.0,0.0,0.0,cpce
 2001,EFGB,study_site,RT,Madracis decactis (MADE),10,0.3141493950689169,0.23131402373960272,0.07314791697554038,cpce
 2001,EFGB,study_site,RT,Madracis sp (MASP),10,0.0,0.0,0.0,cpce
@@ -582,7 +564,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2001,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),10,0.0,0.0,0.0,cpce
 2001,WFGB,study_site,RT,Colpophyllia natans (CONA),10,3.1220255568714754,2.600206479636772,0.822257486238043,cpce
 2001,WFGB,study_site,RT,Colpophyllia sp (COSP),10,0.0,0.0,0.0,cpce
-2001,WFGB,study_site,RT,Crustose Coralline Algae (CCA),10,3.327340919734925,1.0554152441752993,0.3337516048856704,cpce
 2001,WFGB,study_site,RT,Madracis auretenra (MAAU),10,0.0,0.0,0.0,cpce
 2001,WFGB,study_site,RT,Madracis decactis (MADE),10,0.11131378323118661,0.2520722999751528,0.0797122602958688,cpce
 2001,WFGB,study_site,RT,Madracis sp (MASP),10,0.0,0.0,0.0,cpce
@@ -614,7 +595,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2002,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),6,0.0,0.0,0.0,cpce
 2002,EFGB,study_site,RT,Colpophyllia natans (CONA),6,2.826334489298546,2.933138269864308,1.1974486843662366,cpce
 2002,EFGB,study_site,RT,Colpophyllia sp (COSP),6,0.0,0.0,0.0,cpce
-2002,EFGB,study_site,RT,Crustose Coralline Algae (CCA),6,5.151554267476065,1.9880978111624077,0.811637532682001,cpce
 2002,EFGB,study_site,RT,Madracis auretenra (MAAU),6,0.0,0.0,0.0,cpce
 2002,EFGB,study_site,RT,Madracis decactis (MADE),6,0.12842102692748422,0.15055744986613556,0.06146482152444861,cpce
 2002,EFGB,study_site,RT,Madracis sp (MASP),6,0.0,0.0,0.0,cpce
@@ -646,7 +626,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2002,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),5,0.0,0.0,0.0,cpce
 2002,WFGB,study_site,RT,Colpophyllia natans (CONA),5,1.3851817598518037,1.7180624192206277,0.7683408717930129,cpce
 2002,WFGB,study_site,RT,Colpophyllia sp (COSP),5,0.0,0.0,0.0,cpce
-2002,WFGB,study_site,RT,Crustose Coralline Algae (CCA),5,2.046275477437343,1.573622351367464,0.7037453097141417,cpce
 2002,WFGB,study_site,RT,Madracis auretenra (MAAU),5,0.0,0.0,0.0,cpce
 2002,WFGB,study_site,RT,Madracis decactis (MADE),5,1.5773053418616807,2.9798293458554372,1.3326201957362978,cpce
 2002,WFGB,study_site,RT,Madracis sp (MASP),5,0.0,0.0,0.0,cpce
@@ -678,7 +657,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2003,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),7,0.0,0.0,0.0,cpce
 2003,EFGB,study_site,RT,Colpophyllia natans (CONA),7,2.006414337989803,2.6557270024332746,1.0037704569310673,cpce
 2003,EFGB,study_site,RT,Colpophyllia sp (COSP),7,0.0,0.0,0.0,cpce
-2003,EFGB,study_site,RT,Crustose Coralline Algae (CCA),7,6.528127805697214,2.7382263226535564,1.0349522690217456,cpce
 2003,EFGB,study_site,RT,Madracis auretenra (MAAU),7,0.0,0.0,0.0,cpce
 2003,EFGB,study_site,RT,Madracis decactis (MADE),7,0.6678560322411455,0.5733697159385459,0.2167133825241628,cpce
 2003,EFGB,study_site,RT,Madracis sp (MASP),7,0.0,0.0,0.0,cpce
@@ -710,7 +688,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2003,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),7,0.0,0.0,0.0,cpce
 2003,WFGB,study_site,RT,Colpophyllia natans (CONA),7,0.6784134690434437,0.8530271859165384,0.3224139707874885,cpce
 2003,WFGB,study_site,RT,Colpophyllia sp (COSP),7,0.0,0.0,0.0,cpce
-2003,WFGB,study_site,RT,Crustose Coralline Algae (CCA),7,2.9882737505673047,0.8471993670066613,0.3202112622844236,cpce
 2003,WFGB,study_site,RT,Madracis auretenra (MAAU),7,0.0,0.0,0.0,cpce
 2003,WFGB,study_site,RT,Madracis decactis (MADE),7,0.32664756644409876,0.35700105735030757,0.1349337165051459,cpce
 2003,WFGB,study_site,RT,Madracis sp (MASP),7,0.0,0.0,0.0,cpce
@@ -862,7 +839,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2009,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),15,0.0,0.0,0.0,cpce
 2009,EFGB,study_site,RT,Colpophyllia natans (CONA),15,1.939025062401374,2.4186694166118916,0.6244977580346043,cpce
 2009,EFGB,study_site,RT,Colpophyllia sp (COSP),15,0.0,0.0,0.0,cpce
-2009,EFGB,study_site,RT,Crustose Coralline Algae (CCA),15,3.1906630268563387,2.017795645422983,0.5209925953848706,cpce
 2009,EFGB,study_site,RT,Madracis auretenra (MAAU),15,0.0,0.0,0.0,cpce
 2009,EFGB,study_site,RT,Madracis decactis (MADE),15,0.2628730428496599,0.6682509418865313,0.17254165126759707,cpce
 2009,EFGB,study_site,RT,Madracis sp (MASP),15,0.0,0.0,0.0,cpce
@@ -924,7 +900,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2010,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2010,EFGB,study_site,RT,Colpophyllia natans (CONA),16,3.8181410275357166,4.183697678786501,1.0459244196966253,cpce
 2010,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2010,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,2.5549592486172568,1.6380834594273013,0.4095208648568253,cpce
 2010,EFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2010,EFGB,study_site,RT,Madracis decactis (MADE),16,0.20291736849788405,0.3841448947526754,0.09603622368816885,cpce
 2010,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -987,7 +962,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2011,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.015356265356265357,0.06142506142506143,0.015356265356265357,cpce
 2011,EFGB,study_site,RT,Colpophyllia natans (CONA),16,1.6580067041958384,2.7795682883793043,0.6948920720948261,cpce
 2011,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2011,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,1.888635333926958,1.5043642126516052,0.3760910531629013,cpce
 2011,EFGB,study_site,RT,Dichocoenia stokesi (DISTO),16,0.0,0.0,0.0,cpce
 2011,EFGB,study_site,RT,Diploria strigosa (DIST),16,6.127901990104546,7.622821020517708,1.905705255129427,cpce
 2011,EFGB,study_site,RT,Madracis asperula (MAAS),16,0.0,0.0,0.0,cpce
@@ -1027,7 +1001,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2011,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.013586956521739125,0.0543478260869565,0.013586956521739125,cpce
 2011,WFGB,study_site,RT,Colpophyllia natans (CONA),16,0.748999045575954,1.007485454583437,0.25187136364585927,cpce
 2011,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.016233766233766232,0.06493506493506493,0.016233766233766232,cpce
-2011,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,1.29713601849741,0.9059785846305659,0.22649464615764148,cpce
 2011,WFGB,study_site,RT,Dichocoenia stokesi (DISTO),16,0.0,0.0,0.0,cpce
 2011,WFGB,study_site,RT,Diploria strigosa (DIST),16,12.357261260958342,10.469002252887636,2.617250563221909,cpce
 2011,WFGB,study_site,RT,Madracis brueggemanni (MABR),16,0.0,0.0,0.0,cpce
@@ -1067,7 +1040,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2012,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2012,EFGB,study_site,RT,Colpophyllia natans (CONA),16,2.5436160931963943,2.6663504444933537,0.6665876111233384,cpce
 2012,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2012,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,1.2517533640914695,1.129282528985959,0.28232063224648973,cpce
 2012,EFGB,study_site,RT,Dichocoenia stokesi (DISTO),16,0.0,0.0,0.0,cpce
 2012,EFGB,study_site,RT,Diploria strigosa (DIST),16,7.645117827935489,8.2073525250795,2.051838131269875,cpce
 2012,EFGB,study_site,RT,Madracis cf formosa (MAFO),16,0.0,0.0,0.0,cpce
@@ -1106,7 +1078,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2012,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2012,WFGB,study_site,RT,Colpophyllia natans (CONA),16,0.7668608289074581,1.1253535887736683,0.2813383971934171,cpce
 2012,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2012,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,2.7122663312790145,2.4548686965871513,0.6137171741467878,cpce
 2012,WFGB,study_site,RT,Dichocoenia stokesi (DISTO),16,0.0,0.0,0.0,cpce
 2012,WFGB,study_site,RT,Diploria strigosa (DIST),16,9.320882118224047,7.7598142514880415,1.9399535628720104,cpce
 2012,WFGB,study_site,RT,Madracis cf formosa (MAFO),16,0.0,0.0,0.0,cpce
@@ -1146,7 +1117,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2013,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2013,EFGB,study_site,RT,Colpophyllia natans (CONA),16,4.284076813543583,3.4703048503830933,0.8675762125957733,cpce
 2013,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2013,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,0.9168998998821644,0.6524377197350548,0.1631094299337637,cpce
 2013,EFGB,study_site,RT,Dichocoenia stokesi (DISTO),16,0.013297872340425532,0.05319148936170213,0.013297872340425532,cpce
 2013,EFGB,study_site,RT,Diploria strigosa (DIST),16,8.232065299275977,7.4759425267571675,1.8689856316892919,cpce
 2013,EFGB,study_site,RT,Eusmilia sp (EUSP),16,0.0,0.0,0.0,cpce
@@ -1189,7 +1159,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2013,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2013,WFGB,study_site,RT,Colpophyllia natans (CONA),16,3.525355319942838,3.8356638798286165,0.9589159699571541,cpce
 2013,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2013,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,0.40465589006401637,0.3069374133053522,0.07673435332633805,cpce
 2013,WFGB,study_site,RT,Dichocoenia stokesi (DISTO),16,0.01286008230452675,0.05144032921810699,0.012860082304526748,cpce
 2013,WFGB,study_site,RT,Diploria strigosa (DIST),16,9.592788065493625,6.749796354193795,1.6874490885484488,cpce
 2013,WFGB,study_site,RT,Eusmilia sp (EUSP),16,0.0,0.0,0.0,cpce
@@ -1230,7 +1199,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2014,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.013185654008438812,0.05274261603375525,0.013185654008438812,cpce
 2014,EFGB,study_site,RT,Colpophyllia natans (CONA),16,3.9716279248066515,3.5472998945039076,0.8868249736259769,cpce
 2014,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2014,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,1.4565010900515543,0.7420049412181678,0.18550123530454196,cpce
 2014,EFGB,study_site,RT,Madracis aurentenra (MAAU),16,0.0,0.0,0.0,cpce
 2014,EFGB,study_site,RT,Madracis decactis (MADE),16,0.3750972747400079,0.7558671148922954,0.18896677872307385,cpce
 2014,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1262,7 +1230,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2014,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2014,WFGB,study_site,RT,Colpophyllia natans (CONA),16,1.5706913154697697,1.6049862888172608,0.4012465722043152,cpce
 2014,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2014,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,2.2025749897874936,1.0530609136084201,0.26326522840210503,cpce
 2014,WFGB,study_site,RT,Madracis aurentenra (MAAU),16,0.0,0.0,0.0,cpce
 2014,WFGB,study_site,RT,Madracis decactis (MADE),16,0.4051828623921938,0.8428990721760022,0.21072476804400056,cpce
 2014,WFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1294,7 +1261,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2015,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2015,EFGB,study_site,RT,Colpophyllia natans (CONA),16,3.044375,3.7311713419961476,0.9327928354990369,cpce
 2015,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2015,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,2.8737500000000002,1.6128230942460284,0.4032057735615071,cpce
 2015,EFGB,study_site,RT,Madracis aurentenra (MAAU),16,0.0,0.0,0.0,cpce
 2015,EFGB,study_site,RT,Madracis decactis (MADE),16,0.20375,0.259842901256381,0.06496072531409525,cpce
 2015,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1326,7 +1292,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2015,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.026875,0.1075,0.026875,cpce
 2015,WFGB,study_site,RT,Colpophyllia natans (CONA),16,2.128125,2.3758260844037666,0.5939565211009417,cpce
 2015,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2015,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,2.5625,2.270813363826568,0.567703340956642,cpce
 2015,WFGB,study_site,RT,Madracis aurentenra (MAAU),16,0.0,0.0,0.0,cpce
 2015,WFGB,study_site,RT,Madracis decactis (MADE),16,0.70875,1.8193474104744258,0.45483685261860646,cpce
 2015,WFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1358,7 +1323,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2016,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.025625,0.1025,0.025625,cpce
 2016,EFGB,study_site,RT,Colpophyllia natans (CONA),16,2.5168749999999998,3.1321211529356057,0.7830302882339014,cpce
 2016,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2016,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,3.256875,2.0537793414418535,0.5134448353604634,cpce
 2016,EFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2016,EFGB,study_site,RT,Madracis decactis (MADE),16,0.130625,0.23901098301124155,0.059752745752810386,cpce
 2016,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1390,7 +1354,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2016,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2016,WFGB,study_site,RT,Colpophyllia natans (CONA),16,2.450625,2.2342827894725708,0.5585706973681427,cpce
 2016,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2016,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,3.223125,1.132700129484116,0.283175032371029,cpce
 2016,WFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2016,WFGB,study_site,RT,Madracis decactis (MADE),16,0.133125,0.47937068120609966,0.11984267030152491,cpce
 2016,WFGB,study_site,RT,Madracis sp (MASP),16,0.01375,0.05499999999999999,0.013749999999999998,cpce
@@ -1423,7 +1386,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2017,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.02551020408163265,0.1020408163265306,0.02551020408163265,cpce
 2017,EFGB,study_site,RT,Colpophyllia natans (CONA),16,2.288281081723268,2.781241162693037,0.6953102906732592,cpce
 2017,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2017,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,4.509696392111781,2.022351425087965,0.5055878562719912,cpce
 2017,EFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2017,EFGB,study_site,RT,Madracis decactis (MADE),16,0.10266827219500822,0.2234184642324676,0.0558546160581169,cpce
 2017,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1455,7 +1417,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2017,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2017,WFGB,study_site,RT,Colpophyllia natans (CONA),16,3.0273853167055655,3.518208243182015,0.8795520607955037,cpce
 2017,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2017,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,2.202149742726331,0.8873423489260159,0.22183558723150398,cpce
 2017,WFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2017,WFGB,study_site,RT,Madracis decactis (MADE),16,0.06442381675382816,0.16228212609614753,0.04057053152403688,cpce
 2017,WFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1487,7 +1448,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2018,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2018,EFGB,study_site,RT,Colpophyllia natans (CONA),16,2.257032196019762,2.013204682037788,0.503301170509447,cpce
 2018,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2018,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,3.3429739842220676,1.3998597999048015,0.34996494997620037,cpce
 2018,EFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2018,EFGB,study_site,RT,Madracis decactis (MADE),16,0.09103477803676105,0.15101005500635029,0.03775251375158757,cpce
 2018,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1519,7 +1479,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2018,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2018,WFGB,study_site,RT,Colpophyllia natans (CONA),16,3.1773942260315833,4.330824741934205,1.0827061854835514,cpce
 2018,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2018,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,2.317202691203045,1.2066782526932494,0.30166956317331234,cpce
 2018,WFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2018,WFGB,study_site,RT,Madracis decactis (MADE),16,0.07661760033887535,0.2207730190021454,0.05519325475053635,cpce
 2018,WFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1551,7 +1510,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2019,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2019,EFGB,study_site,RT,Colpophyllia natans (CONA),16,2.0938535291641123,2.611668696612567,0.6529171741531418,cpce
 2019,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2019,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,6.16719584838247,3.458144958534349,0.8645362396335873,cpce
 2019,EFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2019,EFGB,study_site,RT,Madracis decactis (MADE),16,0.22441072407248897,0.4359431187029892,0.1089857796757473,cpce
 2019,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1583,7 +1541,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2019,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2019,WFGB,study_site,RT,Colpophyllia natans (CONA),16,2.0746719901930564,2.0956008293955652,0.5239002073488913,cpce
 2019,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2019,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,3.8215748624839385,3.408040937305717,0.8520102343264293,cpce
 2019,WFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2019,WFGB,study_site,RT,Madracis decactis (MADE),16,0.10769974699325315,0.26386803974819467,0.06596700993704867,cpce
 2019,WFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1615,7 +1572,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2022,EFGB,reefwide,RT,Colpophyllia amaranthus (COAM),28,0.0,0.0,0.0,cpce
 2022,EFGB,reefwide,RT,Colpophyllia natans (CONA),28,3.692670682159203,4.628311535499689,0.8746686652188336,cpce
 2022,EFGB,reefwide,RT,Colpophyllia sp (COSP),28,0.0,0.0,0.0,cpce
-2022,EFGB,reefwide,RT,Crustose Coralline Algae (CCA),28,1.2287634815368373,1.0170166244531786,0.1921980762515344,cpce
 2022,EFGB,reefwide,RT,Madracis auretenra (MAAU),28,1.6169848406081477,7.062249242386891,1.3346396565792875,cpce
 2022,EFGB,reefwide,RT,Madracis decactis (MADE),28,0.25769434262599095,0.4410014957586735,0.08334144897035399,cpce
 2022,EFGB,reefwide,RT,Madracis sp (MASP),28,0.0,0.0,0.0,cpce
@@ -1647,7 +1603,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2022,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.012703252032520325,0.0508130081300813,0.012703252032520325,cpce
 2022,EFGB,study_site,RT,Colpophyllia natans (CONA),16,1.7929006561146876,1.8909522030071249,0.4727380507517812,cpce
 2022,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2022,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,3.5895256087621683,1.8279327545090462,0.45698318862726156,cpce
 2022,EFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2022,EFGB,study_site,RT,Madracis decactis (MADE),16,0.1915896075179249,0.3625124514667387,0.09062811286668468,cpce
 2022,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1679,7 +1634,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2022,WFGB,reefwide,RT,Colpophyllia amaranthus (COAM),14,0.0,0.0,0.0,cpce
 2022,WFGB,reefwide,RT,Colpophyllia natans (CONA),14,3.1974237506421948,3.876459176355063,1.036027293695468,cpce
 2022,WFGB,reefwide,RT,Colpophyllia sp (COSP),14,0.0,0.0,0.0,cpce
-2022,WFGB,reefwide,RT,Crustose Coralline Algae (CCA),14,3.13210689605958,1.996572423178641,0.5336064253868221,cpce
 2022,WFGB,reefwide,RT,Madracis auretenra (MAAU),14,0.0,0.0,0.0,cpce
 2022,WFGB,reefwide,RT,Madracis decactis (MADE),14,1.0807698547818299,1.957069812783638,0.523048908673871,cpce
 2022,WFGB,reefwide,RT,Madracis sp (MASP),14,0.0,0.0,0.0,cpce
@@ -1711,7 +1665,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2022,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2022,WFGB,study_site,RT,Colpophyllia natans (CONA),16,2.1711214568464623,2.5588129774301303,0.6397032443575326,cpce
 2022,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2022,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,2.6051795555855777,1.2639072088612622,0.31597680221531554,cpce
 2022,WFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2022,WFGB,study_site,RT,Madracis decactis (MADE),16,0.1503588965097657,0.27867919835593313,0.06966979958898328,cpce
 2022,WFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1743,7 +1696,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2023,EFGB,reefwide,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2023,EFGB,reefwide,RT,Colpophyllia natans (CONA),16,5.124718961994993,3.755251561860405,0.9388128904651013,cpce
 2023,EFGB,reefwide,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2023,EFGB,reefwide,RT,Crustose Coralline Algae (CCA),16,2.4484876871266055,1.744859478914943,0.43621486972873574,cpce
 2023,EFGB,reefwide,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2023,EFGB,reefwide,RT,Madracis decactis (MADE),16,0.6368247129228385,1.4033206354964536,0.3508301588741134,cpce
 2023,EFGB,reefwide,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1775,7 +1727,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2023,EFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2023,EFGB,study_site,RT,Colpophyllia natans (CONA),16,1.7173432212322772,1.3754624424812916,0.3438656106203229,cpce
 2023,EFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2023,EFGB,study_site,RT,Crustose Coralline Algae (CCA),16,2.9157935814857208,1.6719354889670242,0.41798387224175604,cpce
 2023,EFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2023,EFGB,study_site,RT,Madracis decactis (MADE),16,0.5020750088589935,0.6331087713646384,0.1582771928411596,cpce
 2023,EFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
@@ -1807,7 +1758,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2023,WFGB,reefwide,RT,Colpophyllia amaranthus (COAM),13,0.0155714730613516,0.056143744557209406,0.0155714730613516,cpce
 2023,WFGB,reefwide,RT,Colpophyllia natans (CONA),13,1.2102914255466002,1.2891305417637495,0.3575404822381439,cpce
 2023,WFGB,reefwide,RT,Colpophyllia sp (COSP),13,0.0,0.0,0.0,cpce
-2023,WFGB,reefwide,RT,Crustose Coralline Algae (CCA),13,2.728697077847464,1.549703119118407,0.429810312132915,cpce
 2023,WFGB,reefwide,RT,Madracis auretenra (MAAU),13,0.0,0.0,0.0,cpce
 2023,WFGB,reefwide,RT,Madracis decactis (MADE),13,0.4779408039957416,0.7946529619649305,0.22039707696645325,cpce
 2023,WFGB,reefwide,RT,Madracis sp (MASP),13,0.0,0.0,0.0,cpce
@@ -1839,7 +1789,6 @@ year,bank,survey_scope,survey_type,species_label,n_transects,mean_percent_cover,
 2023,WFGB,study_site,RT,Colpophyllia amaranthus (COAM),16,0.0,0.0,0.0,cpce
 2023,WFGB,study_site,RT,Colpophyllia natans (CONA),16,3.2815780589188965,2.693307688496786,0.6733269221241965,cpce
 2023,WFGB,study_site,RT,Colpophyllia sp (COSP),16,0.0,0.0,0.0,cpce
-2023,WFGB,study_site,RT,Crustose Coralline Algae (CCA),16,3.3667198180455453,1.3394498619667672,0.3348624654916918,cpce
 2023,WFGB,study_site,RT,Madracis auretenra (MAAU),16,0.0,0.0,0.0,cpce
 2023,WFGB,study_site,RT,Madracis decactis (MADE),16,0.3139660038300288,0.7607379712305526,0.19018449280763816,cpce
 2023,WFGB,study_site,RT,Madracis sp (MASP),16,0.0,0.0,0.0,cpce
